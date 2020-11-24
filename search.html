@@ -1,0 +1,68 @@
+---
+layout: base
+permalink: /search/
+image: /uploads/nathana-reboucas-c4aT8MfEzdw-unsplash.jpg
+---
+{% include template/header.html %}
+
+
+<div class="page-search">
+
+    <div id="preloader" class="w3-center">
+        <i class="fas fa-spinner fa-spin"></i>
+        <h3>درحال جستجو...</h3>
+        <p>درحال جستجو در وبلاگ با کمک سرویس گوگل هستیم. لطفا کمی منتظر بمانید</p>
+    </div>
+
+    <div id="wrapper" style="display: none;">
+        <h1 id="search_title"><small>نتیجه جستجو برای: </small><span id="search_keyword"></span></h1>
+
+        <form action="{{ '/search/' | absolute_url }}" method="GET">
+            <input type="text" name="q" placeholder="{{ site.data.strings.widget.search.input_placeholder }}" id="search_box">
+        </form>
+
+        <div class="gcse-searchresults-only"></div>
+    </div>
+
+</div>
+
+<script>
+    (function() {
+        var d = document;
+
+        var search_keyword = decodeURIComponent((window.location.search.replace("?q=", '') + '').replace(/\+/g, '%20'));
+        if (search_keyword.length == 0 && search_keyword == "") {
+            d.getElementById("preloader").style.display = "none";
+            d.getElementById("wrapper").style.display = "block";
+            d.getElementById("search_title").style.display = "none";
+        } else {
+            var s = d.createElement('script');
+            s.src = 'https://cse.google.com/cse.js?cx={{ site.google_cse }}';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            s.onload = function() {
+                keyword = decodeURIComponent((window.location.search.replace("?q=", '') + '').replace(/\+/g, '%20'));
+                console.log(keyword);
+                d.getElementById("search_keyword").innerText = keyword;
+                d.getElementById("search_box").value = keyword;
+
+                setTimeout(() => {
+                    d.getElementById("preloader").style.display = "none";
+                    d.getElementById("wrapper").style.display = "block";
+                }, 1000);
+            };
+            s.onerror = function() {
+                console.log("error");
+            };
+        }
+
+
+
+
+
+    
+    })();
+</script>
+
+
+{% include template/footer.html %}

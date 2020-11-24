@@ -1,0 +1,50 @@
+{% capture date %}
+    {% capture day_of_week_name %}
+        {% assign tmp = include.date | date: '%A' %}
+        {% case tmp %}
+            {% when 'Sunday' %}
+                {{ 'یکشنبه' }}
+            {% when 'Monday' %}
+                {{ 'دوشنبه' }}
+            {% when 'Tuesday' %}
+                {{ 'سه شنبه' }}
+            {% when 'Wednesday' %}
+                {{ 'چهارشنبه' }}
+            {% when 'Thursday' %}
+                {{ 'پنجشنبه' }}
+            {% when 'Friday' %}
+                {{ 'جمعه' }}
+            {% when 'Saturday' %}
+                {{ 'شنبه' }}
+        {% endcase %}
+    {% endcapture %}{{ day_of_week_name | strip | append: '،' }} {{ include.date | date: '%-d' }}
+    {% capture month_name %}
+        {% assign tmp = include.date | date: '%B' %}
+        {% case tmp %}
+            {% when 'January' %}
+                {{ 'ژانویه' | strip }}
+            {% when 'February' %}
+                {{ 'فوریه' | strip }}
+            {% when 'March' %}
+                {{ 'مارس'  | strip}}
+            {% when 'April' %}
+                {{ 'آوریل'  | strip}}
+            {% when 'May' %}
+                {{ 'مه'  | strip}}
+            {% when 'June' %}
+                {{ 'ژوئن'  | strip}}
+            {% when 'July' %}
+                {{ 'ژوئیه'  | strip}}
+            {% when 'August' %}
+                {{ 'اوت'  | strip}}
+            {% when 'September' %}
+                {{ 'سپتامبر'  | strip}}
+            {% when 'October' %}
+                {{ 'اکتبر'  | strip}}
+            {% when 'November' %}
+                {{ 'نوامبر'  | strip}}
+            {% when 'December' %}
+                {{ 'دسامبر'  | strip}}
+        {% endcase %}
+    {% endcapture %} {{ month_name | strip }} {{ include.date | date: '%Y' }}
+{% endcapture %}{{ date | strip }}

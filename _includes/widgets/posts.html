@@ -1,0 +1,20 @@
+<!--
+    title
+    mode
+        random
+        latest
+    count
+-->
+<div class="page-widget widget-posts">
+    <header class="widget-header">
+        <h3>{{ include.title }}</h3>
+    </header>
+    <div class="widget-body">
+        {% assign posts = site.posts | sample: include.count %}
+        <ul>
+            {% for i in posts %}
+                <li><a href="{{ i.url | absolute_url }}">{{ i.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

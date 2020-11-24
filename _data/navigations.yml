@@ -1,0 +1,37 @@
+# title (required)
+# url (required)
+# target (optional): default is _self
+# icon (optional): use full FontAwesome version 5 icon name. example "fab fa-instagram"
+primary:
+  -
+    title: صفحه اصلی
+    url: /
+  -
+    title: تماس و درباره
+    url: /linux98/
+  -
+    title: نقشه سایت
+    url: /sitemap/
+
+
+# title (required)
+# url (required)
+# target (optional): default is _blank
+# icon (optional): use full FontAwesome version 5 icon name. example `fab fa-instagram`. default is `fas fa-link`
+social:
+  -
+    title: گروه تلگرام
+    url: https://t.me/linux98ir
+    icon: fab fa-telegram
+  -
+    title: کانال تلگرام
+    url: https://t.me/linux98dotir
+    icon: fas fa-bullhorn
+  -
+    title: اینستاگرام
+    url: https://instagram.com/linux98dotir
+    icon: fab fa-instagram
+  -
+    title: کانال آپارات
+    url: https://aparat.com/linux98
+    icon: fas fa-video

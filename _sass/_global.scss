@@ -1,0 +1,246 @@
+.warning {
+    .title {
+        font-family: $estedad_font_family;
+        font-size: $large_font_size;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .description {
+        font-size: $x_small_font_size;
+        margin: 0;
+    }
+}
+
+
+
+/*
+    w3css
+*/
+
+.w3-border {
+    border-color: #eeeeee;
+}
+
+
+
+/*
+    html
+*/
+
+::selection {
+    color: #ffffff;
+    background-color: $theme_color;
+}
+::-moz-selection {
+    color: #ffffff;
+    background-color: $theme_color;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $text_color_primary;
+    font-family: $estedad_font_family;
+    font-size: $normal_font_size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $lalezar_font_family;
+    line-height: 1.28;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    transition: all 0.3s;
+}
+
+
+
+/*
+    header
+*/
+
+.page-header {
+    // height: 100%;
+    color: #ffffff;
+    margin-bottom: 128px;
+
+    .w3-display-container {
+        height: 100%;
+    }
+
+    .w3-display-topmiddle,
+    .w3-display-middle,
+    .w3-display-bottommiddle {
+        width: 100%;
+    }
+    
+    .w3-display-middle {
+        margin-top: 32px;
+    }
+}
+
+.site-title {
+    font-weight: bold;
+    color: $theme_color;
+    text-shadow: 1px 1px 1px rgba($color: $text_color_primary, $alpha: 0.16);
+    &:hover {
+        color: $theme_color !important;
+        text-shadow: none;
+    }
+}
+
+.page-title {
+    z-index: 1;
+
+    .w3-display-container {
+        height: 100%;
+    }
+
+    .w3-display-middle {
+        width: 100%;
+    }
+
+    .title {
+        margin: 0;
+        font-size: $page_title_font_size;
+        text-shadow: 2px 2px 4px rgba($color: $text_color_primary, $alpha: 0.64);
+
+        small time {
+            display: block;
+            color: #ffffff;
+            font-size: $large_font_size;
+            text-shadow: 1px 1px 1px rgba($color: $text_color_primary, $alpha: 0.64);
+        }
+    }
+}
+
+#btn_scroll_down {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    &:focus {
+        color: #ffffff !important;
+        outline: none !important;
+        outline-style: none !important;
+        border: none !important;
+    }
+}
+
+.page-header-bg {
+    // height: 100%;
+    position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    background-image: url('/uploads/christopher-gower-291246-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+.page-header-bg-effect {
+    // height: 100%;
+    position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    background-color: rgba($color: $theme_color, $alpha: .64);
+    z-index: -1;
+}
+
+
+
+/*
+    entry
+*/
+
+.page-entry {
+}
+
+.page-content {
+    border-right: 1px solid #eeeeee;
+}
+
+
+
+
+
+
+
+/*
+    footer
+*/
+
+.page-footer {
+    margin: 128px auto;
+}
+
+.page-copyrights {
+    a {
+        color: $theme_color;
+        text-decoration: none;
+        &:hover {
+            color: $text_color_secondary;
+        }
+    }
+}
+
+
+.gs-title {
+    color: $theme_color !important;
+    &:hover {
+        color: $text_color_secondary !important;
+    }
+}
+.gs-snippet {
+    color: $text_color_primary !important;
+}
+
+
+.page-404 {
+    .title {
+        font-size: $xxx_large_font_size * 2;
+        margin: 0;
+    }
+
+    .description {
+
+    }
+
+    #txt_search {
+        padding: 8px 16px;
+        width: 512px;
+        max-width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: $theme_color;
+        &:hover {
+            color: $text_color_secondary;
+        }
+    }
+}

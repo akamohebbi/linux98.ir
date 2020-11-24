@@ -1,0 +1,80 @@
+url: https://linux98.ir
+
+charset: UTF-8
+
+# language
+lang: fa_IR
+
+# direction
+dir: rtl
+
+title: لینوکس 98
+description: منبع فارسی لینوکس و نرم افزارهای متن باز
+
+disqus_shortname: linux98
+disqus_language: fa
+
+# Google custom search engine
+google_cse: f7004dddd1e4d598d
+
+google_analytics: UA-127055020-2
+
+excerpt_separator: '<div id="read-more"></div>'
+
+permalink: /:year/:month/:slug/
+
+# future post disabled
+future: false
+
+collections:
+    theme:
+        output: true
+        permalink: /theme/:path
+    uploads:
+        output: true
+        permalink: /uploads/:path
+    pages:
+        output: true
+        permalink: /:slug/
+
+
+defaults:
+    # pages
+    -
+        scope:
+            path: ""
+            type: "pages"
+        values:
+            layout: single
+            type: page
+            comments: true
+    # posts
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: single
+            type: post
+            comments: true
+
+
+exclude:
+    - CNAME
+    - LICENSE
+    - README.md
+
+
+plugins:
+    - jekyll-paginate
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - jemoji
+    - jekyll-feed
+
+google_site_verification: cq6a3Ab_v7AW1E_BlWFNW_uwNWoHpiN4x-LVBe1MaRQ
+
+seo_paginator_message: "برگه %<current>s از %<total>s | "
+
+paginate: 10
+paginate_path: /page/:num/

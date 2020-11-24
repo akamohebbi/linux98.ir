@@ -1,0 +1,37 @@
+<aside class="w3-col s12 m3 l3 page-sidebar w3-left">
+    
+    {% 
+        include widgets/search.html 
+    %}
+
+    {%
+        include widgets/base.html
+    %}
+
+    {%
+        include widgets/categories.html
+        title="دسته بندی ها"    
+    %}
+    
+    {% 
+        include widgets/banner.html 
+        collection="social"
+    %}
+    
+    {% 
+        include widgets/posts.html 
+        title="نوشته های تصادفی"
+        count=5
+    %}
+
+    {%
+        include widgets/feedburner.html
+        title="خبرنامه"    
+    %}
+
+    {%
+        include widgets/tags.html
+        title="تگ ها"    
+    %}
+
+</aside>

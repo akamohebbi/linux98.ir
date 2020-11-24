@@ -1,0 +1,7 @@
+{% capture url %}
+	{% if include.url contains 'http' %}
+		{{ include.url }}
+	{% else %}
+		{{ site.url | append: include.url }}
+	{% endif %}
+{% endcapture %}{{ url | strip }}

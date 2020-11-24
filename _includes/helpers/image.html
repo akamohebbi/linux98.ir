@@ -1,0 +1,32 @@
+<!--
+    src
+    alt
+    title
+    caption
+    float
+    width
+    height
+-->
+{% capture src %}{% include helpers/url.html url=include.src %}{% endcapture %}
+
+{% assign alt = page.title %}
+{% if include.alt %}
+    {% assign alt = include.alt %}
+{% endif %}
+
+{% assign title = alt %}
+{% if include.title %}
+    {% assign title = include.title %}
+{% endif %}
+
+{% assign caption = alt %}
+{% if include.caption %}
+    {% assign caption = include.caption %}
+{% endif %}
+
+<figure>
+    <img src="{{ src }}" alt="{{ alt }}" title="{{ title }}">
+    <figcaption>
+        {{ caption }}
+    </figcaption>
+</figure>

@@ -1,0 +1,12 @@
+<div class="page-widget widget-menu">
+    <header class="widget-header">
+        <h3>{{ include.title }}</h3>
+    </header>
+    <div class="widget-body">
+        <ul>
+            {% for i in site.data.navigations[include.menu] %}
+                <li><a href="{{ i.url }}">{{ i.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

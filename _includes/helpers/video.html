@@ -1,0 +1,14 @@
+<!--
+    src
+    id
+-->
+
+{% if include.src == 'youtube' %}
+    {% assign url = "https://www.youtube.com/embed/VIDEO_ID" %}
+{% elsif include.src == 'aparat' %}
+    {% assign url = "https://www.aparat.com/video/video/embed/videohash/VIDEO_ID/vt/frame" %}
+{% endif %}
+
+<div class="video-responsive">
+    <iframe src="{{ url | replace: 'VIDEO_ID', include.id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>

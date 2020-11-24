@@ -1,0 +1,101 @@
+---
+layout: base
+---
+{% include template/header.html %}
+
+
+{% for post in paginator.posts %}
+    <article class="page-article">
+        <header class="article-header">
+            {% if post.jdate %}
+                {% assign jdate = post.jdate | split: "-" %}
+                {% assign y = jdate[0] | minus: 0 %}
+                {% assign m = jdate[1] | minus: 1 %}
+                {% assign d = jdate[2] | minus: 0 %}
+                {% assign w = post.date | date: "%w" | minus: 0 %}
+            {% endif %}
+            {% if post.jedit %}
+                {% assign jedit = post.jedit | split: "-" %}
+                {% assign ye = jedit[0] | minus: 0 %}
+                {% assign me = jedit[1] | minus: 1 %}
+                {% assign de = jedit[2] | minus: 0 %}
+                {% assign we = post.edit | date: "%w" | minus: 0 %}
+            {% endif %}
+            <time class="article-date" pubdate datetime="{{ post.date | date_to_xmlschema }}">{% if post.jdate %}{{ site.data.strings.weekdays[w] }}، {{ d }} {{ site.data.strings.months[m] }} {{ y }}{% else %}{{ post.date | date: "%A %d %m %y" }}{% endif %}</time>
+
+            <h1 class="article-title"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h1>
+        </header>
+
+        <div class="article-content">
+            {% if post.image %}
+                <a href="{{ post.url | absolute_url }}">
+                    <img src="{{ post.image }}" alt="{{ post.title }}" class="article-image article-image-small w3-hover-opacity w3-right">
+                </a>
+            {% endif %}
+
+            {% if post.content contains site.excerpt_separator %}
+                {{ post.excerpt }}
+            {% else %}
+                {{ post.content }}
+            {% endif %}
+        </div>
+
+        {% if post.content contains site.excerpt_separator %}
+            <footer class="article-footer">
+                <a href="{{ post.url | absolute_url }}#read-more" class="read-more">{{ site.data.strings.read_more_link }}</a>
+            </footer>
+        {% endif %}
+    </article>
+{% endfor %}
+
+
+<div class="page-pagination w3-center">
+    <div class="previous w3-right">
+        {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="page">{{ site.data.strings.paginator_previous_page_enabled }}</a>
+        {% else %}
+            <span class="page disable">{{ site.data.strings.paginator_previous_page_disabled }}</span>
+        {% endif %}
+    </div>
+
+    <div class="w3-hide-small">
+        {% if paginator.page != 1 %}
+            <a href="{{ '/' | absolute_url }}" class="page first-page">1</a>
+        {% else %}
+            <span class="page first-page disable">1</span>
+        {% endif %}
+
+        {% if paginator.page != 1 and paginator.page != paginator.total_pages %}
+            {% assign previous_page_number = paginator.page | minus: 1 %}
+            {% if previous_page_number != 1 %}
+                <span>...</span>
+            {% endif %}
+
+            <span class="page disable">{{ paginator.page }}</span>
+
+            {% assign next_page_number = paginator.page | plus: 1 %}
+            {% if next_page_number != paginator.total_pages %}
+                <span>...</span>
+            {% endif %}
+        {% endif %}
+
+        {% if paginator.page != paginator.total_pages %}
+            <a href="{{ '/page' | append: paginator.total_pages | append: '/' | absolute_url }}" class="page last-page">{{ paginator.total_pages }}</a>
+        {% else %}
+            <span class="page last-page disable">{{ paginator.total_pages }}</span>
+        {% endif %}
+    </div>
+
+    <div class="next w3-left">
+        {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="page">{{ site.data.strings.paginator_next_page_enabled }}</a>
+        {% else %}
+            <span class="page disable">{{ site.data.strings.paginator_next_page_disabled }}</span>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+{% include template/footer.html %}

@@ -1,0 +1,24 @@
+akamohebbi:
+  picture: /uploads/avatar_akamohebbi.jpg
+  name: آکام محبی
+  bio: آکام هستم. یه برنامه نویس خسته که هیچ وقت نتونست کارشناسی رو تموم کنه و بخاطر گیم بازی کردن نتونست لینوکس نصب کنه. استاد از دست دادن فرصت های زندگی و یه نمونه خیلی خوب برای اینکه ازش عبرت بگیرید
+
+
+aminyousefnejad:
+  picture: /uploads/avatar_aminyousefnejad.jpg
+  name: امین یوسف نژاد
+  bio: امین هستش. یه برنامه نویس خفن جاوا که از وقتی دیدمش داشت با لینوکس و زوبونتو حال می کرد. بعد از تموم شدن از کارشناسی گویا به پایتون سویچ کرده. کسی که همیشه منو با پایتون مسخره می کرد -_- نوشته شده توسط آکام
+  links:
+  #   # title (required)
+  #   # url (required)
+  #   # icon (optional): full FontAwesome v5 icon class name. exmaple "fab fa-instagram". default is fas fa-icon
+  #   # target (optional): default is _blank
+  #   # color (optional): text color on hover. exmaple "pink". get a color class name from https://www.w3schools.com/w3css/w3css_colors.asp
+    -
+      title: گیت هاب
+      url: https://github.com/HarlyquinForest
+      icon: fab fa-github
+    -
+      title: اینستاگرام
+      url: https://instagram.com/amin_yousefneajd_
+      icon: fab fa-instagram

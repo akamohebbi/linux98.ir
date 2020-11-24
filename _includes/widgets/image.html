@@ -1,0 +1,17 @@
+<div class="page-widget widget-image">
+    {% if include.title %}
+        <header class="widget-header">
+            <h3>{{ include.title }}</h3>
+        </header>
+    {% endif %}
+
+    <div class="widget-body">
+        {% if include.link %}
+            <a href="{{ include.link }}">
+                <img src="{{ include.src }}" alt="{{ include.alt }}">
+            </a>
+        {% else %}
+            <img src="{{ include.src }}" alt="{{ include.alt }}">
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,39 @@
+---
+layout: base
+permalink: /sitemap/
+title: نقشه سایت
+---
+{% include template/header.html %}
+
+<div class="page-sitemap">
+    {% if site.pages.size > 0 %}
+        <div class="pages-container">
+            <h1>برگه ها</h1>
+            <ul>
+                {% for p in site.pages %}
+                    <li><a href="{{ p.url | absolute_url }}">{{ p.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+    {% if site.categories.size > 0 %}
+        <div class="categories-container">
+            <h1>نوشته ها بر اساس دسته بندی</h1>
+            {% for category in site.categories %}
+                <ul>
+                    <li id="{{ category[0] }}">
+                        <span class="category-title">{{ category[0] }}</span>
+                        <ul>
+                            {% for post in category[1] %}
+                                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% include template/footer.html %}

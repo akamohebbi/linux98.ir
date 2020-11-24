@@ -1,0 +1,26 @@
+---
+layout: base
+permalink: /404.html
+image: /uploads/404-error-cyberpuk-girl-9x.jpg
+title: پیدا نشد
+---
+{% include template/header.html %}
+
+
+<div class="page-404">
+    <h1 class="title">{{ site.data.strings.page_404_title }}</h1>
+    <p class="description">{{ site.data.strings.page_404_description }}</p>
+    <input type="text" id="txt_search" placeholder="{{ site.data.strings.page_404_search_box_placeholder }}" />
+</div>
+
+<script>
+    document.getElementById("txt_search").onkeyup =function(e) {
+        e.preventDefault();
+        if (e.keyCode == 13) {
+			window.open("{{ '/search/?q=' | absolute_url }}" + this.value, "_self");
+		}
+    };
+</script>
+
+
+{% include template/footer.html %}

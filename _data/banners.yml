@@ -1,0 +1,18 @@
+# background
+# color
+# link
+# target
+# icon
+# title
+
+social:
+  -
+    background: "linear-gradient(to right, #2193b0, #6dd5ed)"
+    link: "https://t.me/linux98ir"
+    icon: "fab fa-telegram"
+    title: "گروه تلگرامی لینوکس 98"
+  -
+    background: "linear-gradient(to right, #ed213a, #93291e)"
+    link: "https://www.aparat.com/linux98"
+    icon: "fas fa-video"
+    title: "کانال آپارات"

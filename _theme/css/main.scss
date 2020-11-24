@@ -1,0 +1,102 @@
+---
+layout: none
+---
+@charset "UTF-8";
+
+
+
+@font-face {
+    font-family: 'Estedad';
+    font-weight: 300;
+    src: url('../fonts/estedad/Estedad-Light.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Estedad';
+    font-weight: normal;
+    src: url('../fonts/estedad/Estedad-Medium.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Estedad';
+    font-weight: bold;
+    src: url('../fonts/estedad/Estedad-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Lalezar';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Lalezar'), local('Lalezar-Regular'), url(../fonts/lalezar/zrfl0HLVx-HwTP82YaL4IxL0.woff2) format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+@font-face {
+    font-family: 'Lalezar';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Lalezar'), local('Lalezar-Regular'), url(../fonts/lalezar/zrfl0HLVx-HwTP82Yaf4Iw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, 
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: Vazir Code;
+    src: url('../fonts/vazir-code/Vazir-Code.eot');
+    src: url('../fonts/vazir-code/Vazir-Code.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vazir-code/Vazir-Code.woff') format('woff'),
+         url('../fonts/vazir-code/Vazir-Code.ttf') format('truetype');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: Vazir Code Hack;
+    src: url('../fonts/vazir-code/Vazir-Code-Hack.eot');
+    src: url('../fonts/vazir-code/Vazir-Code-Hack.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vazir-code/Vazir-Code-Hack.woff') format('woff'),
+         url('../fonts/vazir-code/Vazir-Code-Hack.ttf') format('truetype');
+    font-weight: normal;
+  }
+
+
+
+$theme_color: cornflowerblue;
+$text_color_primary: #333333;
+$text_color_secondary: #a1a1a1;
+
+$estedad_font_family: 'Estedad', sans-serif;
+$lalezar_font_family: 'Lalezar', cursive;
+
+$xxx_small_font_size: .5rem;
+$xx_small_font_size: .7rem;
+$x_small_font_size: .9rem;
+$small_font_size: 1rem;
+
+$normal_font_size: 1.1rem;
+
+$large_font_size: 1.2rem;
+$x_large_font_size: 1.3rem;
+$xx_large_font_size: 1.5rem;
+$xxx_large_font_size: 1.7rem;
+
+$page_title_font_size: 3.5rem;
+
+$article_title_font_size: 2.75rem;
+$article_content_font_size: 1.175rem;
+
+$page_title_font_size_on_small_views: 3.5rem;
+
+$article_title_font_size_on_small_views: 3rem;
+$article_content_font_size_on_small_views: 1.2rem;
+
+
+
+@import
+    // "global",
+    // "navigations",
+    // "article",
+    "widgets",
+    "page-search",
+    "syntax-highlighter",
+    // "small"
+    "home"
+;

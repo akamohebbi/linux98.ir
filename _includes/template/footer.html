@@ -1,0 +1,31 @@
+
+            </div>
+
+            
+            {% include template/sidebar.html %}
+        </main>
+
+
+        <footer class="page-footer w3-row">
+            <nav class="page-footer-nav w3-col s12 l3 l3">
+                {% if site.data.navigations.social %}
+                    {% for ni in site.data.navigations.social %}
+                        <a href="{{ ni.url }}" target="{{ ni.target | default: '_blank' }}">
+                            {% if ni.icon %}
+                                <i class="{{ ni.icon }}"></i>
+                            {% endif %}
+                            <span class="w3-hide">{{ ni.title }}</span>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    &nbsp;
+                {% endif %}
+            </nav>
+
+            <div class="page-copyrights w3-col s12 l9 l9">{{ site.data.strings.footer_copyright }}</div>
+        </footer>
+
+
+    </div>
+    <div class="w3-col s12 m1 l1 w3-hide-small">&nbsp;</div>
+</div>

@@ -1,0 +1,156 @@
+---
+layout: base
+---
+{% include template/header.html %}
+
+
+
+<article class="page-article">
+    <header class="article-header">
+        {% if page.type == "post" %}
+            {% if page.jdate %}
+                {% assign jdate = page.jdate | split: "-" %}
+                {% assign y = jdate[0] | minus: 0 %}
+                {% assign m = jdate[1] | minus: 1 %}
+                {% assign d = jdate[2] | minus: 0 %}
+                {% assign w = page.date | date: "%w" | minus: 0 %}
+            {% endif %}
+            {% if page.jedit %}
+                {% assign jedit = page.jedit | split: "-" %}
+                {% assign ye = jedit[0] | minus: 0 %}
+                {% assign me = jedit[1] | minus: 1 %}
+                {% assign de = jedit[2] | minus: 0 %}
+                {% assign we = page.edit | date: "%w" | minus: 0 %}
+            {% endif %}
+            <time class="article-date" pubdate datetime="{{ page.date | date_to_xmlschema }}">{% if page.jdate %}{{ site.data.strings.weekdays[w] }}، {{ d }} {{ site.data.strings.months[m] }} {{ y }}{% else %}{{ page.date | date: "%A %d %m %y" }}{% endif %}</time>
+        {% endif %}
+
+        <h1 class="article-title">{{ page.title }}</h1>
+    </header>
+
+    <div class="article-content">
+        {{ page.content }}
+    </div>
+
+    {% if page.type == "post" %}
+        <footer class="article-footer w3-cell-row">
+            <div class="w3-cell w3-mobile">
+                <div class="article-categories">
+                    <!-- <i class="fas fa-archive"></i> -->
+                    <span class="title">دسته بندی شده در</span>
+                    {% for c in page.categories %}
+                        <span class="article-category">{{ c }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="article-tags">
+                    {% for t in page.tags %}
+                        <span class="article-tag"><a href="{{ '/tags/' | absolute_url }}#{{ t }}">{{ t }}</a></span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="w3-cell w3-cell-middle w3-mobile">
+                <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                    <a class="a2a_button_telegram"></a>
+                    <a class="a2a_button_whatsapp"></a>
+                    <a class="a2a_button_facebook"></a>
+                    <a class="a2a_button_twitter"></a>
+                    <a class="a2a_button_linkedin"></a>
+                    <a class="a2a_button_reddit"></a>
+                </div>
+                <script>
+                    var a2a_config = a2a_config || {};
+                    a2a_config.onclick = 1;
+                    a2a_config.locale = "fa";
+                    a2a_config.num_services = 2;
+                </script>
+                <script async src="https://static.addtoany.com/menu/page.js"></script>
+                <!-- AddToAny END -->
+            </div>
+        </footer>
+    {% endif %}
+</article>
+
+
+{% if page.type == "post" and site.data.authors[page.author] %}
+    <div class="article-author">
+        {% assign author = site.data.authors[page.author] %}
+        <div class="w3-cell w3-mobile w3-center author-picture">
+            <img src="{{ author.picture }}" alt="{{ author.name }}">
+        </div>
+
+        <div class="w3-cell w3-cell-middle w3-container">
+            <h4 class="author-name"><small>نویسنده: </small>{{ author.name }}</h4>
+            <p class="author-bio">{{ author.bio }}</p>
+
+            <nav class="author-links">
+                {% for i in author.links %}
+                    <a href="{{ i.url }}" target="{{ i.target | default: '_blank' }}">
+                        <i class="{{ i.icon | default: 'fas fa-link' }}"></i>
+                        <span class="w3-hide-small">{{ i.title }}</span>
+                    </a>
+                {% endfor %}
+            </nav>
+        </div>
+    </div>
+{% endif %}
+
+{% if page.comments == true and site.disqus_shortname %}
+    <div class="article-comments">
+        <div id="disqus_thread" style="display: none;"></div>
+
+        <div id="disqus_loading_info" class="w3-center">
+            <i class="fas fa-spinner fa-spin" id="disqus_loading_info_icon"></i>
+            <div id="disqus_loading_info">
+                <h3 id="disqus_loading_title" style="margin: 0; line-height: 1.2;"></h3>
+                <p id="disqus_loading_description" style="margin: 0;"></p>
+            </div>
+        </div>
+
+        <script>
+            var disqus_config = function () {
+                this.language = "{{ site.disqus_language | default: 'en' }}";
+                this.page.url = "{{ page.url | absolute_url }}";
+                this.page.identifier = "{{ page.id }}";
+                this.page.title = "{{ page.title }}";
+            };
+            
+            (function() {
+                var disqus_thread = document.getElementById("disqus_thread");
+                var disqus_loading_info = document.getElementById("disqus_loading_info");
+                
+                var disqus = document.createElement('script');
+                disqus.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
+                disqus.async = true;
+                disqus.setAttribute('data-timestamp', + new Date());
+                
+                (document.head || document.body).appendChild(disqus);
+
+
+                disqus.onload = function() {
+                    disqus_loading_info.style.display = "none";
+                    setTimeout(function() {
+                        disqus_thread.style.display = "block";
+                    }, Math.floor(Math.random() * 1000 + 640));
+                };
+
+
+                disqus.onerror = function() {
+                    document.getElementById("disqus_loading_info_icon").style.display = "none";
+                    document.getElementById("disqus_loading_title").innerText = 
+                        "{{ site.data.strings.disqus_load_faild_msg_title }}";
+                    document.getElementById("disqus_loading_description").innerText = 
+                        "{{ site.data.strings.disqus_load_faild_msg_description }}";
+                };
+            })();
+        </script>
+        <noscript>{{ site.data.strings.disqus_noscript }}</noscript>
+    </div>
+{% endif %}
+
+
+
+{% include template/footer.html %}

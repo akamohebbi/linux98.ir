@@ -1,0 +1,68 @@
+widget:
+  search:
+    title: جستجو
+    description: یه دنبال محتوای خاصی هستید؟
+    input_placeholder: جستجو
+  
+  feedburner:
+    title: خبرنامه
+    description: آخرین مطالب وبلاگ آکام رو با ایمیل دریافت کنید<br>با عضویت در خبرنامه وبلاگ آکام جدیدترین مطالب وبلاگ براتون ایمیل میشه و البته می تونید عضو سرویس <a href="{{ '/feed.xml' | absolute_url }}" target="_blank" class="rss">RSS</a> وبلاگ هم بشید
+    email_input_placeholder: آدرس ایمیل خودتون رو وارد کنید
+    signup_button_text: عضویت در خبرنامه
+    
+
+
+
+
+
+
+weekdays:
+  - یک‌شنبه
+  - دوشنبه
+  - سه‌شنبه
+  - چهار‌شنبه
+  - پنج‌شنبه
+  - جمعه
+  - شنبه
+
+months:
+  - فروردین
+  - اردیبهشت
+  - خرداد
+  - تیر
+  - مرداد
+  - شهریور
+  - مهر
+  - آبان
+  - آذر
+  - دی
+  - بهمن
+  - اسفند
+
+sitemap_pages_section_title: برگه ها
+sitemap_posts_by_category_section_title: نوشته ها بر اساس دسته بندی
+
+page_404_title: اوپسس!! عجیبه ولی آدرس درخواستی شما پیدا نشد!
+page_404_description: می تونید به <a href="/">صفحه اصلی وبلاگ</a> برگردید ولی شاید بد نباشه نگاهی به <a href="/sitemap/">برگه نقشه سایت</a> هم بندازید یا با کمک فرم زیر تو وبلاگ جستجو کنید.
+page_404_search_box_placeholder: جستجو
+
+there_is_no_post_on_blog_warning_title: هنوز هیچ نوشته ای در این وبلاگ منتشر نشده
+there_is_no_post_on_blog_warning_description: نویسنده خسته این وبلاگ هنوز اولین نوشته وبلاگش رو منتشر نکرده. با ایجاد یک فایل در دایرکتوری _posts اولین نوشته رو بنویسید.
+
+paginator_previous_page_enabled: مطالب جدیدتر
+paginator_previous_page_disabled: مطالب جدیدتر
+paginator_next_page_enabled: مطالب قدیمی‌تر
+paginator_next_page_disabled: مطالب قدیمی‌تر
+
+read_more_link: ادامه &larr;
+
+disqus_load_faild_msg_title: فرم کامنت ها براتون نشون داده نمیشه چون مرورگرتون نمی تونه به سایت Disqus وصل بشه
+disqus_load_faild_msg_description: لطفا صفحه رو یک بار رفرش کنید و اگر درست نشد احتمالا یا فیلترش کردیم یا تحریم شدیم پس با ابزارهای لازمه دوباره تلاش کنید
+disqus_noscript: Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+
+feedburner_title: آخرین مطالب وبلاگ آکام رو با ایمیل دریافت کنید
+feedburner_text: با عضویت در خبرنامه وبلاگ آکام جدیدترین مطالب وبلاگ براتون ایمیل میشه و البته می تونید عضو سرویس <a href="{{ '/feed.xml' | absolute_url }}" target="_blank" class="rss">RSS</a> وبلاگ هم بشید
+feedburner_email_placeholder: آدرس ایمیل خودتون رو وارد کنید
+feedburner_button_text: عضویت در خبرنامه
+
+footer_copyright: تمام حقوق مادی و معنوی این وبسایت برای گروه لینوکس 98 محفوظ است
