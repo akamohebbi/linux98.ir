@@ -80,7 +80,7 @@ layout: base
         {% endif %}
 
         {% if paginator.page != paginator.total_pages %}
-            <a href="{{ '/page' | append: paginator.total_pages | append: '/' | absolute_url }}" class="page last-page">{{ paginator.total_pages }}</a>
+            <a href="{{ '/page/' | append: paginator.total_pages | append: '/' | absolute_url }}" class="page last-page">{{ paginator.total_pages }}</a>
         {% else %}
             <span class="page last-page disable">{{ paginator.total_pages }}</span>
         {% endif %}

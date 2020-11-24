@@ -14,6 +14,8 @@ description: منبع فارسی لینوکس و نرم افزارهای متن 
 disqus_shortname: linux98
 disqus_language: fa
 
+feedburner: linux98
+
 # Google custom search engine
 google_cse: f7004dddd1e4d598d
 
@@ -73,8 +75,6 @@ plugins:
     - jekyll-feed
 
 google_site_verification: cq6a3Ab_v7AW1E_BlWFNW_uwNWoHpiN4x-LVBe1MaRQ
-
-seo_paginator_message: "برگه %<current>s از %<total>s | "
 
 paginate: 10
 paginate_path: /page/:num/

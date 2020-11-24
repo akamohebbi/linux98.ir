@@ -8,7 +8,15 @@ layout: none
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {% seo %}
+    {% seo title=false %}
+
+    {% if page.title %}
+        <title>{{ page.title }} | {{ site.title }}</title>
+    {% elsif page.url contains '/page/' %}
+        <title>برگه {{ paginator.page }} از {{ paginator.total_pages }} | {{ site.title }}</title>
+    {% else %}
+        <title>{{ site.title }} | {{ site.description }}</title>
+    {% endif %}
 
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 
