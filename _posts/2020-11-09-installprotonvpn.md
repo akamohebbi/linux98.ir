@@ -51,11 +51,11 @@ api_domain = "https://api.protonvpn.ch"
 ```
 url که اونجا هست رو می تونید پینگ بکنید اگه با موفقیت نوستید پینگ بکنید لازم نیس هیچ تغییر انجام بدید و اوصولا باید بدون مشکل کار کنه . 
 ```sh
-ping api.protonvpn.sh
+ping api.protonvpn.ch
 ```
 ولی اگه نتونسید پینگش کنید باید این آدرس رو تغییر بدیم برای اینکه مطمئن بشیم آدرس جدید قابل دسترسی هست و آدرس جدیدم پنیگ کنید و اگه از سرور جوابی نگرفتید احتمالا isp تون بلاکش کرده و کلا بیخیال پروتون بشید . چون راه حلی براش ندارم 
 ```sh
-ping api.proronmail.ch
+ping api.protonmail.ch
 ```
 خیلی خب حالا کافیه محتوای متغییر که تو خط ۲۷ هست یعنی این 
 ```python 
@@ -63,7 +63,7 @@ api_domain = "https://api.protonvpn.ch"
 ```
 به این تغییر بدید 
 ```python 
-api_domain = "https://api.protonmail.ch
+api_domain = "https://api.protonmail.ch"
 ```
 فایل رو ذخیره کنید . 
 
