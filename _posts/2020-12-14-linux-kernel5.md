@@ -1,6 +1,6 @@
 ---
-date: 2020-12-14 22:27:12 +0330
-jdate: 1399-10-24
+date: 2020-12-16 19:10:12 +0330
+jdate: 1399-10-26
 title: لینوکس را بیشتر بشناسیم (پارت5)Memory Management
 author: aminyousefnejad
 image: /uploads/linux_kernel/wallpaper.png
