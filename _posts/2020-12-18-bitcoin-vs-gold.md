@@ -1,5 +1,5 @@
 ---
-date: 2020-12-18 17:40:00 +0330
+date: 2020-12-18 19:12:00 +0330
 jdate: 1399-10-28
 title: بیت کوین vs طلا
 author: aminyousefnejad
