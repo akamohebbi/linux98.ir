@@ -4,7 +4,7 @@
     </header>
     <div class="widget-body">
         {% for t in site.tags %}
-            <a href="{{ '/tags/' | absolute_url }}#{{ t[0] }}" style="font-size: {{ t[1].size | plus: 12 }}px;">{{ t[0] }}</a>
+            <a href="{{ '/tags/' | relative_url }}#{{ t[0] }}" style="font-size: {{ t[1].size | plus: 12 }}px;">{{ t[0] }}</a>
         {% endfor %}
     </div>
 </div>

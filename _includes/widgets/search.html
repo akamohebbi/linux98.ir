@@ -4,7 +4,7 @@
     </header>
     <div class="widget-body">
         <!-- <p>{{ site.data.strings.widget.search.description }}</p> -->
-        <form action="{{ '/search/' | absolute_url }}" method="GET">
+        <form action="{{ '/search/' | relative_url }}" method="GET">
             <input type="text" placeholder="{{ site.data.strings.widget.search.input_placeholder }}" id="search_box" name="q">
         </form>
     </div>

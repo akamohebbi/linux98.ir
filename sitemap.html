@@ -11,7 +11,7 @@ title: نقشه سایت
             <h1>برگه ها</h1>
             <ul>
                 {% for p in site.pages %}
-                    <li><a href="{{ p.url | absolute_url }}">{{ p.title }}</a></li>
+                    <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
                 {% endfor %}
             </ul>
         </div>

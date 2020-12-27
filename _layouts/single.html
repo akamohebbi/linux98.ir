@@ -45,7 +45,7 @@ layout: base
                 
                 <div class="article-tags">
                     {% for t in page.tags %}
-                        <span class="article-tag"><a href="{{ '/tags/' | absolute_url }}#{{ t }}">{{ t }}</a></span>
+                        <span class="article-tag"><a href="{{ '/tags/' | relative_url }}#{{ t }}">{{ t }}</a></span>
                     {% endfor %}
                 </div>
             </div>
@@ -113,7 +113,7 @@ layout: base
         <script>
             var disqus_config = function () {
                 this.language = "{{ site.disqus_language | default: 'en' }}";
-                this.page.url = "{{ page.url | absolute_url }}";
+                this.page.url = "{{ page.url | relative_url }}";
                 this.page.identifier = "{{ page.id }}";
                 this.page.title = "{{ page.title }}";
             };

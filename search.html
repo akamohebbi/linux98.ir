@@ -17,7 +17,7 @@ image: /uploads/nathana-reboucas-c4aT8MfEzdw-unsplash.jpg
     <div id="wrapper" style="display: none;">
         <h1 id="search_title"><small>نتیجه جستجو برای: </small><span id="search_keyword"></span></h1>
 
-        <form action="{{ '/search/' | absolute_url }}" method="GET">
+        <form action="{{ '/search/' | relative_url }}" method="GET">
             <input type="text" name="q" placeholder="{{ site.data.strings.widget.search.input_placeholder }}" id="search_box">
         </form>
 

@@ -13,7 +13,7 @@
         {% assign posts = site.posts | sample: include.count %}
         <ul>
             {% for i in posts %}
-                <li><a href="{{ i.url | absolute_url }}">{{ i.title }}</a></li>
+                <li><a href="{{ i.url | relative_url }}">{{ i.title }}</a></li>
             {% endfor %}
         </ul>
     </div>

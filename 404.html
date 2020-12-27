@@ -17,7 +17,7 @@ title: پیدا نشد
     document.getElementById("txt_search").onkeyup =function(e) {
         e.preventDefault();
         if (e.keyCode == 13) {
-			window.open("{{ '/search/?q=' | absolute_url }}" + this.value, "_self");
+			window.open("{{ '/search/?q=' | relative_url }}" + this.value, "_self");
 		}
     };
 </script>

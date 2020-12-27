@@ -6,7 +6,7 @@
         <ul>
             {% for c in site.categories %}
                 <li>
-                    <a href="{{ '/sitemap/' | absolute_url }}#{{ c[0] }}">{{ c[0] }}</a>
+                    <a href="{{ '/sitemap/' | relative_url }}#{{ c[0] }}">{{ c[0] }}</a>
                     <span>({{ c[1].size }})</span>
                 </li>
             {% endfor %}
