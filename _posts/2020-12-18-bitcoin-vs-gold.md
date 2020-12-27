@@ -1,6 +1,6 @@
 ---
 date: 2020-12-18 19:12:00 +0330
-jdate: 1399-10-28
+jdate: 1399-09-28
 title: بیت کوین vs طلا
 author: aminyousefnejad
 image: /uploads/bitcoin_vs_gold.jpeg
@@ -44,5 +44,3 @@ tags:
 
 
 [ hackernoon](https://hackernoon.com/lets-talk-about-gold-vs-bitcoin-841e312c)
-
- 
