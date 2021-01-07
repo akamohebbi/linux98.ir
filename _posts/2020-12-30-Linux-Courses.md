@@ -1,6 +1,6 @@
 ---
 date: 2021-1-7 18:01:00 +0330
-jdate: 1399-10-17
+jdate: 1399-10-18
 title: دوره درک لینوکس
 author: mtlouk
 image: /uploads/linux.jpg
