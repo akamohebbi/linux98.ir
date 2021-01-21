@@ -6,7 +6,7 @@
         </main>
 
 
-        <footer class="page-footer w3-row">
+        <!-- <footer class="page-footer w3-row">
             <nav class="page-footer-nav w3-col s12 l3 l3">
                 {% if site.data.navigations.social %}
                     {% for ni in site.data.navigations.social %}
@@ -23,6 +23,26 @@
             </nav>
 
             <div class="page-copyrights w3-col s12 l9 l9">{{ site.data.strings.footer_copyright }}</div>
+        </footer> -->
+
+
+        <footer class="page-footer w3-cell-row">
+            <div class="page-copyrights w3-cell w3-mobile">{{ site.data.strings.footer_copyright }}</div>
+
+            <nav class="page-footer-nav w3-cell w3-cell-middle w3-mobile">
+                {% if site.data.navigations.social %}
+                    {% for ni in site.data.navigations.social %}
+                        <a href="{{ ni.url }}" target="{{ ni.target | default: '_blank' }}">
+                            {% if ni.icon %}
+                                <i class="{{ ni.icon }}"></i>
+                            {% endif %}
+                            <span class="w3-hide">{{ ni.title }}</span>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    &nbsp;
+                {% endif %}
+            </nav>
         </footer>
 
 

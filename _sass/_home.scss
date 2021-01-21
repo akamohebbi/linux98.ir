@@ -449,6 +449,15 @@ a {
 
 .page-copyrights {
     text-align: right;
+
+    a {
+        text-decoration: none;
+        opacity: 0.64;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 .page-tags {
@@ -579,7 +588,7 @@ a {
         text-align: center;
     }
 
-    .page-copyrights {
+    .page-footer-nav {
         margin-top: 16px;
     }
 }
