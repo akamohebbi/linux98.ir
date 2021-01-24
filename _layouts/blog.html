@@ -4,6 +4,159 @@ layout: base
 {% include template/header.html %}
 
 
+
+
+
+
+
+
+
+
+{% if page.url == '/' %}
+    <style>
+        .slider {
+            height: 512px;
+            margin: 0 auto;
+            background-color: cornflowerblue;
+        }
+
+        .slide {
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .slide-title {
+            background-color: rgba(0, 0, 0, .64);
+            color: white;
+            padding: 4px 8px;
+            text-align: center;
+        }
+
+        .slider-pagination {
+            margin-bottom: 16px;
+        }
+        .slider-pagination button {
+            background-color: white;
+            border: none;
+            padding: 8px;
+            opacity: .5;
+        }
+        .slider-pagination button:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+        .slider-pagination button:focus {
+            outline: none;
+        }
+
+        .slider-previous-btn {
+            margin-left: 16px;
+        }
+
+        .slider-next-btn {
+            margin-right: 16px;
+        }
+    </style>
+
+
+
+    {% assign posts = site.posts | where_exp: "post", "post.image != none" | sample: 5 %}
+    <div class="slider w3-display-container">
+        {% for post in posts %}
+        <div class="slide" style="background-image: url('{{ post.image }}');" id="slide-{{ forloop.index }}">
+            <a href="{{ post.url }}">
+                <div class="w3-display-middle slide-title"><h3>{{ post.title }}</h3></div>
+            </a>
+        </div>
+        {% endfor %}
+
+        <button class="w3-button w3-black w3-display-left slider-previous-btn" onclick="slider(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="w3-button w3-black w3-display-right slider-next-btn" onclick="slider(1)"><i class="fas fa-chevron-right"></i></button>
+        
+        <div class="w3-display-bottommiddle slider-pagination">
+            <div class="w3-bar" dir="ltr">
+                {% for post in (1..posts.size) %}
+                    <button class="slider-pagination-btn" onclick="nextSlide({{ forloop.index }});"></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+var current_slide_index = 1;
+
+slider(2);
+
+var timer = setInterval(() => {
+        slider(1);
+    }, 5000);
+
+function slider(i) {
+    nextSlide(current_slide_index + i);
+}
+
+function nextSlide(new_slide_index) {
+    if (new_slide_index === current_slide_index) {
+        return;
+    }
+
+    var slides = document.getElementsByClassName("slide");
+    var slide_pagination_btns = document.getElementsByClassName("slider-pagination-btn");
+
+    current_slide_index = new_slide_index;    
+    
+    if (current_slide_index > slides.length) {
+        current_slide_index = 1;
+    }
+    if (current_slide_index < 1) {
+        current_slide_index = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slide_pagination_btns[i].style.opacity = "0.5";
+    }
+
+    slides[current_slide_index-1].style.display = "block";
+    slide_pagination_btns[current_slide_index-1].style.opacity = "1";
+}
+
+
+
+
+// var slideIndex = 1;
+// showDivs(slideIndex);
+
+// function plusDivs(n) {
+//     showDivs(slideIndex += n);
+// }
+
+// function showDivs(n) {
+//     var i;
+//     var x = document.getElementsByClassName("slide");
+//     if (n > x.length) {slideIndex = 1}
+//     if (n < 1) {slideIndex = x.length}
+//     for (i = 0; i < x.length; i++) {
+//         x[i].style.display = "none";  
+//     }
+//     x[slideIndex-1].style.display = "block";  
+// }
+</script>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
 {% for post in paginator.posts %}
     <article class="page-article">
         <header class="article-header">
