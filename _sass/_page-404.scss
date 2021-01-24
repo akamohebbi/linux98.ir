@@ -1,0 +1,28 @@
+.page-404 {
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: $theme_color;
+        
+        &:hover {
+            color: $text_color_secondary;
+        }
+    }
+    
+    .et {
+        font-size: 15rem;
+        line-height: 0;
+    }
+
+    input {
+        width: 512px;
+        max-width: 100%;
+        padding: 8px 16px;
+        border: 1px solid #eeeeee;
+
+        &:focus {
+            border: 1px solid $text_color_primary;
+        }
+    }
+}
