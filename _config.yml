@@ -76,5 +76,5 @@ plugins:
 
 google_site_verification: cq6a3Ab_v7AW1E_BlWFNW_uwNWoHpiN4x-LVBe1MaRQ
 
-paginate: 10
+paginate: 8
 paginate_path: /page/:num/

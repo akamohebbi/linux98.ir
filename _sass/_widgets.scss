@@ -1,12 +1,122 @@
 /*
-    Sidebar & Widgets
+    slider
 */
 
-
-// -------------------------------- sidebar
-.page-sidebar {
-    font-size: $small_font_size;
+.slider {
+    height: 512px;
+    margin: 0 auto;
 }
+
+
+// -------------------- slide item 
+.slide {
+    height: 100%;
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+// -------------------- title
+.slide-title {
+    background-color: rgba($color: #333333, $alpha: 0.5);
+    color: #ffffff;
+    padding: 16px;
+    text-align: center;
+    width: 100%;
+    text-align: right;
+    transition: all 0.3s;
+}
+.slide-title:hover {
+    background-color: #333333;
+    transition: all 0.3s;
+}
+
+.slide-title h3 {
+    margin: 0;
+    font-family: $estedad_font_family;
+}
+
+
+// -------------------- next and previous slide buttons
+.slider-previous-btn {
+    margin-left: 16px;
+}
+
+.slider-next-btn {
+    margin-right: 16px;
+}
+
+.slider-next-btn,
+.slider-previous-btn {
+    opacity: .5;
+    border: 1px solid #eeeeee;
+    border: none;
+    color: white;
+    background: transparent;
+    font-size: $xxx_large_font_size*2;
+    padding: 16px;
+    transition: all 0.3s;
+}
+
+.slider-next-btn:hover,
+.slider-previous-btn:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-shadow: 2px 2px rgba($color: #333333, $alpha: .64);
+}
+.slider-next-btn:focus,
+.slider-previous-btn:focus {
+    outline: none;
+}
+
+// -------------------- slider pagination
+.slider-pagination {
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+.slider-pagination button {
+    border: 1px solid #eeeeee !important;
+    box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.16);
+    background-color: #ffffff;
+    border: none;
+    padding: 8px;
+    opacity: .5;
+    transition: all 0.3s;
+}
+.slider-pagination button:hover {
+    opacity: 1 !important;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.slider-pagination button:focus {
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // -------------------------------- widget

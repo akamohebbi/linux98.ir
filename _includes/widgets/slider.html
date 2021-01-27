@@ -1,0 +1,26 @@
+{% assign count = 5 %}
+{% if include.count %}
+    {% assign count = include.count %}
+{% endif %}
+
+{% assign posts = site.posts | where_exp: "post", "post.image != none" | sample: count %}
+<div class="slider w3-display-container">
+    {% for post in posts %}
+        <div class="slide" style="background-image: url('{{ post.image }}');" id="slide-{{ forloop.index }}">
+            <a href="{{ post.url }}">
+                <div class="w3-display-bottomright slide-title"><h3>{{ post.title }}</h3></div>
+            </a>
+        </div>
+    {% endfor %}
+
+    <button class="w3-display-left slider-previous-btn" onclick="next_slide_by_step(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="w3-display-right slider-next-btn" onclick="next_slide_by_step(1)"><i class="fas fa-chevron-right"></i></button>
+    
+    <div class="w3-display-topleft slider-pagination">
+        <div class="w3-bar" dir="ltr">
+            {% for post in (1..posts.size) %}
+                <button class="slider-pagination-btn" onclick="next_slide_by_index({{ forloop.index }});"></button>
+            {% endfor %}
+        </div>
+    </div>
+</div>

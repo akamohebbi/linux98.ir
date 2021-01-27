@@ -535,6 +535,10 @@ a {
     }
 }
 
+.page-sidebar {
+    font-size: $small_font_size;
+}
+
 @media (max-width: 600px) {
     .page-ef-wrapper {
         margin-bottom: 0;

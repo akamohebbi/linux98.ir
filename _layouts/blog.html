@@ -5,155 +5,9 @@ layout: base
 
 
 
-
-
-
-
-
-
-
 {% if page.url == '/' %}
-    <style>
-        .slider {
-            height: 512px;
-            margin: 0 auto;
-            background-color: cornflowerblue;
-        }
-
-        .slide {
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .slide-title {
-            background-color: rgba(0, 0, 0, .64);
-            color: white;
-            padding: 4px 8px;
-            text-align: center;
-        }
-
-        .slider-pagination {
-            margin-bottom: 16px;
-        }
-        .slider-pagination button {
-            background-color: white;
-            border: none;
-            padding: 8px;
-            opacity: .5;
-        }
-        .slider-pagination button:hover {
-            opacity: 1;
-            cursor: pointer;
-        }
-        .slider-pagination button:focus {
-            outline: none;
-        }
-
-        .slider-previous-btn {
-            margin-left: 16px;
-        }
-
-        .slider-next-btn {
-            margin-right: 16px;
-        }
-    </style>
-
-
-
-    {% assign posts = site.posts | where_exp: "post", "post.image != none" | sample: 5 %}
-    <div class="slider w3-display-container">
-        {% for post in posts %}
-        <div class="slide" style="background-image: url('{{ post.image }}');" id="slide-{{ forloop.index }}">
-            <a href="{{ post.url }}">
-                <div class="w3-display-middle slide-title"><h3>{{ post.title }}</h3></div>
-            </a>
-        </div>
-        {% endfor %}
-
-        <button class="w3-button w3-black w3-display-left slider-previous-btn" onclick="slider(-1)"><i class="fas fa-chevron-left"></i></button>
-        <button class="w3-button w3-black w3-display-right slider-next-btn" onclick="slider(1)"><i class="fas fa-chevron-right"></i></button>
-        
-        <div class="w3-display-bottommiddle slider-pagination">
-            <div class="w3-bar" dir="ltr">
-                {% for post in (1..posts.size) %}
-                    <button class="slider-pagination-btn" onclick="nextSlide({{ forloop.index }});"></button>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-
-
-<script>
-var current_slide_index = 1;
-
-slider(2);
-
-var timer = setInterval(() => {
-        slider(1);
-    }, 5000);
-
-function slider(i) {
-    nextSlide(current_slide_index + i);
-}
-
-function nextSlide(new_slide_index) {
-    if (new_slide_index === current_slide_index) {
-        return;
-    }
-
-    var slides = document.getElementsByClassName("slide");
-    var slide_pagination_btns = document.getElementsByClassName("slider-pagination-btn");
-
-    current_slide_index = new_slide_index;    
-    
-    if (current_slide_index > slides.length) {
-        current_slide_index = 1;
-    }
-    if (current_slide_index < 1) {
-        current_slide_index = slides.length;
-    }
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-        slide_pagination_btns[i].style.opacity = "0.5";
-    }
-
-    slides[current_slide_index-1].style.display = "block";
-    slide_pagination_btns[current_slide_index-1].style.opacity = "1";
-}
-
-
-
-
-// var slideIndex = 1;
-// showDivs(slideIndex);
-
-// function plusDivs(n) {
-//     showDivs(slideIndex += n);
-// }
-
-// function showDivs(n) {
-//     var i;
-//     var x = document.getElementsByClassName("slide");
-//     if (n > x.length) {slideIndex = 1}
-//     if (n < 1) {slideIndex = x.length}
-//     for (i = 0; i < x.length; i++) {
-//         x[i].style.display = "none";  
-//     }
-//     x[slideIndex-1].style.display = "block";  
-// }
-</script>
+    {% include widgets/slider.html count=8 %}
 {% endif %}
-
-
-
-
-
-
-
 
 
 
@@ -203,52 +57,66 @@ function nextSlide(new_slide_index) {
 {% endfor %}
 
 
-<div class="page-pagination w3-center">
-    <div class="previous w3-right">
-        {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path }}" class="page">{{ site.data.strings.paginator_previous_page_enabled }}</a>
-        {% else %}
-            <span class="page disable">{{ site.data.strings.paginator_previous_page_disabled }}</span>
-        {% endif %}
-    </div>
 
-    <div class="w3-hide-small">
-        {% if paginator.page != 1 %}
-            <a href="{{ '/' | relative_url }}" class="page first-page">1</a>
-        {% else %}
-            <span class="page first-page disable">1</span>
-        {% endif %}
-
-        {% if paginator.page != 1 and paginator.page != paginator.total_pages %}
-            {% assign previous_page_number = paginator.page | minus: 1 %}
-            {% if previous_page_number != 1 %}
-                <span>...</span>
+<div class="page-pagination w3-center w3-bar">
+    {% if paginator.total_pages <= 8 %}
+        {% for i in (1..paginator.total_pages) %}
+            {% if i == 1 %}
+                {% if paginator.page == 1 %}
+                    <a href="#!" class="w3-button w3-disabled w3-black">1</a>
+                {% else %}
+                    <a href="/" class="w3-button w3-black">1</a>
+                {% endif %}
+                {% continue %}
+            {% elsif paginator.page == i %}
+                <a href="#!" class="w3-button w3-disabled w3-black">{{ i }}</a>
+                {% continue %}
             {% endif %}
+            <a href="/page/{{ i }}/" class="w3-button w3-black">{{ i }}</a>
+        {% endfor %}
+    {% else %}
+        {% assign page_number_minus_2 = paginator.page | minus: 2 %}
+        {% if paginator.page == paginator.total_pages %}
+            {% assign page_number_minus_2 = paginator.page | minus: 3 %}
+        {% elsif page_number_minus_2 < 1 %}
+            {% assign page_number_minus_2 = 1 %}
+        {% endif %}
 
-            <span class="page disable">{{ paginator.page }}</span>
+        {% assign page_number_plus_2 = paginator.page | plus: 3 %}
+        {% if page_number_plus_2 > paginator.total_pages %}
+            {% assign page_number_plus_2 = paginator.total_pages %}
+        {% endif %}
 
-            {% assign next_page_number = paginator.page | plus: 1 %}
-            {% if next_page_number != paginator.total_pages %}
-                <span>...</span>
+        {% if paginator.page == 1 %}
+            <a href="#!" class="w3-button w3-disabled w3-black">1</a>
+        {% elsif page_number_minus_2 == 1 or page_number_minus_2 < 3 %}
+            <a href="/" class="w3-button w3-black">1</a>
+        {% else %}
+            <a href="/" class="w3-button w3-black">1</a>
+            ...
+        {% endif %}
+        
+        {% for i in (page_number_minus_2..page_number_plus_2) %}
+            {% if i == 1 or i == paginator.total_pages %}
+                {% continue %}
+            {% elsif paginator.page == i %}
+                <a href="#!" class="w3-button w3-disabled w3-black">{{ i }}</a>
+                {% continue %}
             {% endif %}
-        {% endif %}
-
-        {% if paginator.page != paginator.total_pages %}
-            <a href="{{ '/page/' | append: paginator.total_pages | append: '/' | relative_url }}" class="page last-page">{{ paginator.total_pages }}</a>
+            <a href="/page/{{ i }}/" class="w3-button w3-black">{{ i }}</a>
+        {% endfor %}
+        
+        {% assign t = paginator.total_pages | minus: 2 %}
+        {% if paginator.page == paginator.total_pages %}
+            <a href="#!" class="w3-button w3-disabled w3-black">{{ paginator.total_pages }}</a>
+        {% elsif page_number_plus_2 == paginator.total_pages or page_number_plus_2 > t %}
+            <a href="/page/{{ paginator.total_pages }}/" class="w3-button w3-black">{{ paginator.total_pages }}</a>
         {% else %}
-            <span class="page last-page disable">{{ paginator.total_pages }}</span>
+            ...
+            <a href="/page/{{ paginator.total_pages }}/" class="w3-button w3-black">{{ paginator.total_pages }}</a>
         {% endif %}
-    </div>
-
-    <div class="next w3-left">
-        {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}" class="page">{{ site.data.strings.paginator_next_page_enabled }}</a>
-        {% else %}
-            <span class="page disable">{{ site.data.strings.paginator_next_page_disabled }}</span>
-        {% endif %}
-    </div>
+    {% endif %}
 </div>
-
 
 
 
