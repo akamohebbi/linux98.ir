@@ -13,8 +13,6 @@ function slider(index) {
     if (current_slide_index > slides.length) { current_slide_index = 1; }
     if (current_slide_index < 1) { current_slide_index = slides.length };
     
-    console.log("next slide will be: " + current_slide_index);
-
     for (var i = 0; i < slides.length; i++) {
         slides[current_slide_index - 1].className = "slide";
         slides[i].style.display = "none";
@@ -65,15 +63,29 @@ function reset_auto_slide_interval() {
 var tgl_header_nav_mobile = document.getElementById("tgl_header_nav_mobile");
 var page_header_nav_mobile = document.getElementById("page_header_nav_mobile");
 
-const tgl_header_nav_mobile_CLASS_LIST = tgl_header_nav_mobile.classList;
+const page_header_nav_mobile_CLASS_NAMES = page_header_nav_mobile.className;
+
+var is_working_on_showing_nav = false;
 
 var is_showing_mobile_nav = false;
 tgl_header_nav_mobile.onclick = function() {
+    if (is_working_on_showing_nav) { return; }
+    is_working_on_showing_nav = true;
+
     if (is_showing_mobile_nav) {
-        page_header_nav_mobile.style.display = "none";
+        page_header_nav_mobile.className = page_header_nav_mobile_CLASS_NAMES + " animate__animated animate__backOutDown";
+        setTimeout(() => {
+            page_header_nav_mobile.style.display = "none";
+        }, 1000);
         is_showing_mobile_nav = false;
     } else {
         page_header_nav_mobile.style.display = "block";
+        page_header_nav_mobile.className = page_header_nav_mobile_CLASS_NAMES + " animate__animated animate__backInUp";
+        is_showing_mobile_nav != is_showing_mobile_nav;
         is_showing_mobile_nav = true;
     }
+
+    setTimeout(() => {
+        is_working_on_showing_nav = false;
+    }, 1000);
 };
