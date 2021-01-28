@@ -76,12 +76,14 @@ tgl_header_nav_mobile.onclick = function() {
     is_working_on_showing_nav = true;
 
     if (is_showing_mobile_nav) {
+        document.getElementById("tgl_header_nav_mobile_icon").className = "fas fa-bars";
         page_header_nav_mobile.className = page_header_nav_mobile_CLASS_NAMES + " animate__animated animate__backOutDown";
         setTimeout(() => {
             page_header_nav_mobile.style.display = "none";
         }, 1000);
         is_showing_mobile_nav = false;
     } else {
+        document.getElementById("tgl_header_nav_mobile_icon").className = "fas fa-times";
         page_header_nav_mobile.style.display = "block";
         page_header_nav_mobile.className = page_header_nav_mobile_CLASS_NAMES + " animate__animated animate__backInUp";
         is_showing_mobile_nav != is_showing_mobile_nav;

@@ -6,7 +6,7 @@
 
             <a href="{{ '/' | relative_url }}" class="site-title w3-right w3-bar-item w3-button w3-hover-none">{{ site.title }}</a>
 
-            <button class="w3-left w3-button w3-hover-none w3-hide-medium w3-hide-large" id="tgl_header_nav_mobile"><i class="fas fa-bars"></i></button>
+            <button class="w3-left w3-button w3-hover-none w3-hide-medium w3-hide-large" id="tgl_header_nav_mobile"><i id="tgl_header_nav_mobile_icon" class="fas fa-bars"></i></button>
 
             <div class="page-header-nav-desktop w3-left w3-hide-small" id="page_header_nav_desktop">
                 {% for ni in site.data.navigations.primary %}

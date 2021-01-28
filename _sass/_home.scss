@@ -58,6 +58,8 @@ h6 {
 img {
     max-width: 100%;
     transition: all .3s;
+    display: block;
+    margin: 0 auto;
 
     &:hover {
         transition: all .3s;
