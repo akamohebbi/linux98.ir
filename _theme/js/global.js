@@ -25,11 +25,14 @@ function slider(index) {
 }
 
 
-slider(current_slide_index);
+if (document.getElementById("slider") != undefined) {
+    console.log("done.")
+    slider(current_slide_index);
 
-var auto_slide_interval = setInterval(() => {
-    slider(current_slide_index + 1);
-}, AUTO_SLIDE_DURATION);
+    var auto_slide_interval = setInterval(() => {
+        slider(current_slide_index + 1);
+    }, AUTO_SLIDE_DURATION);
+}
 
 
 function next_slide_by_step(step) {

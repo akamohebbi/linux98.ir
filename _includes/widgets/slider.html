@@ -4,7 +4,7 @@
 {% endif %}
 
 {% assign posts = site.posts | where_exp: "post", "post.image != none" | sample: count %}
-<div class="slider w3-display-container">
+<div id="slider" class="slider w3-display-container">
     {% for post in posts %}
         <div class="slide" style="background-image: url('{{ post.image }}');" id="slide-{{ forloop.index }}">
             <a href="{{ post.url }}">
