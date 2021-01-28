@@ -6,7 +6,7 @@ layout: base
 
 
 {% if page.url == '/' %}
-    {% include widgets/slider.html count=8 %}
+    {% include widgets/slider.html count=4 %}
 {% endif %}
 
 
@@ -28,7 +28,51 @@ layout: base
                 {% assign de = jedit[2] | minus: 0 %}
                 {% assign we = post.edit | date: "%w" | minus: 0 %}
             {% endif %}
-            <time class="article-date" pubdate datetime="{{ post.date | date_to_xmlschema }}">{% if post.jdate %}{{ site.data.strings.weekdays[w] }}، {{ d }} {{ site.data.strings.months[m] }} {{ y }}{% else %}{{ post.date | date: "%A %d %m %y" }}{% endif %}</time>
+
+            {% assign time_to_read = post.content | number_of_words | divided_by: 200.0 | round: 2 %}
+            {% assign t = post.content | number_of_words | divided_by: 200 %}
+            {% assign t = time_to_read | minus: t | times: 0.60 | times: 100 | round %}
+            {% if t > 30 %}
+                {% assign time_to_read = time_to_read | plus: 1 %}
+            {% endif %}
+
+            <div class="article-meta">
+                {% if post.date or post.jdate %}
+                    <span class="article-date meta">
+                        <i class="fas fa-calendar"></i>
+                        <time pubdate datetime="{{ post.date | date_to_xmlschema }}">{% if post.jdate %}{{ site.data.strings.weekdays[w] }}، {{ d }} {{ site.data.strings.months[m] }} {{ y }}{% else %}{{ post.date | date: "%A %d %m %y" }}{% endif %}</time>
+                    </span>
+                {% endif %}
+
+                {% if post.author %}
+                    <span class="article-author meta">
+                        <i class="fas fa-user"></i>
+                        {{ site.data.authors[post.author].name }}
+                    </span>
+                {% endif %}
+
+                {% if post.categories %}
+                    <span class="article-categories meta">
+                        <i class="fas fa-archive"></i>
+                        {% for category in post.categories %}
+                            <span>{{ category }}</span>
+                        {% endfor %}
+                    </span>
+                {% endif %}
+
+                {% if post.comments == true %}
+                    <span class="article-comments meta">
+                        <i class="fas fa-comment"></i>
+                        <a href="{{ post.url }}#disqus_thread">کامنت ها</a>
+                    </span>
+                {% endif %}
+
+                <span class="article-time-to-read meta">
+                    <i class="fas fa-clock"></i>
+                    {{ time_to_read | round }} دقیقه
+                </span>
+            </div>
+
 
             <h1 class="article-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
         </header>

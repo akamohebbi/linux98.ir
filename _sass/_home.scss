@@ -179,9 +179,55 @@ a {
     margin-bottom: 32px;
 }
 
-.article-date {
-    color: $text_color_secondary;
+
+.article-meta {
+    i {
+        font-size: 80%;
+        margin-left: 2px;
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            color: $text_color_primary;
+        }
+    }
+
+    .meta {
+        color: $text_color_secondary;
+
+        &::after {
+            margin-left: 16px;
+            content: '';
+        }
+
+        &:last-child::after {
+            content: none;
+            margin-left: 0;
+        }
+    }
+
+    .article-author {
+        border-top: none;
+    }
+
+    .article-comments {
+        border-top: none;
+    }
+
+    .article-categories {
+        span {
+            &::after {
+                content: '،';
+            }
+
+            &:last-child::after {
+                content: none;
+            }
+        }
+    }
 }
+
 
 .article-title {
     margin: 0;
@@ -542,6 +588,7 @@ a {
 @media (max-width: 600px) {
     .page-ef-wrapper {
         margin-bottom: 0;
+        box-shadow: none;
         border: none;
     }
 
