@@ -78,14 +78,6 @@ layout: base
     {% if page.type == "post" %}
         <footer class="article-footer w3-cell-row">
             <div class="w3-cell w3-mobile">
-                <div class="article-categories">
-                    <!-- <i class="fas fa-archive"></i> -->
-                    <span class="title">دسته بندی شده در</span>
-                    {% for c in page.categories %}
-                        <span class="article-category">{{ c }}</span>
-                    {% endfor %}
-                </div>
-                
                 <div class="article-tags">
                     {% for t in page.tags %}
                         <span class="article-tag"><a href="{{ '/tags/' | relative_url }}#{{ t }}">{{ t }}</a></span>
