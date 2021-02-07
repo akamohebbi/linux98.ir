@@ -18,20 +18,16 @@ primary:
 # url (required)
 # target (optional): default is _blank
 # icon (optional): use full FontAwesome version 5 icon name. example `fab fa-instagram`. default is `fas fa-link`
-social:
-  -
-    title: گروه تلگرام
-    url: https://t.me/linux98ir
-    icon: fab fa-telegram
-  -
-    title: کانال تلگرام
-    url: https://t.me/linux98dotir
-    icon: fas fa-bullhorn
-  -
-    title: اینستاگرام
-    url: https://instagram.com/linux98dotir
-    icon: fab fa-instagram
-  -
-    title: کانال آپارات
-    url: https://aparat.com/linux98
-    icon: fas fa-video
+# social:
+#   -
+#     title: گروه تلگرام
+#     url: https://t.me/linux98ir
+#     icon: fab fa-telegram
+#   -
+#     title: کانال تلگرام
+#     url: https://t.me/linux98dotir
+#     icon: fas fa-bullhorn
+#   -
+#     title: "کانال یوتیوب"
+#     url: https://www.youtube.com/channel/UCU_SZ-kFvJCdUdIeYh-3cGA
+#     icon: "fab fa-youtube"

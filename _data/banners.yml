@@ -5,12 +5,19 @@
 # icon
 # title
 
-social:
+telegram:
   -
     background: "linear-gradient(to right, #2193b0, #6dd5ed)"
     link: "https://t.me/linux98ir"
     icon: "fab fa-telegram"
     title: "گروه تلگرامی لینوکس 98"
+  -
+    background: "linear-gradient(to right, #2193b0, #6dd5ed)"
+    link: "https://t.me/linux98dotir"
+    icon: "fab fa-telegram"
+    title: "کانال تلگرامی لینوکس 98"
+
+social:
   -
     background: "linear-gradient(to right, #ed213a, #93291e)"
     link: "https://www.youtube.com/channel/UCU_SZ-kFvJCdUdIeYh-3cGA"

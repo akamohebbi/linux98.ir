@@ -1,10 +1,17 @@
 <div class="page-widget">
-    {% for i in site.data.banners[include.collection] %}
-        <a href="{{ i.link }}" target="{{ i.target | default: '_blank' }}" class="widget-banner">
-            <div style="background: {{ i.background }}{% if i.color %}; color: {{ i.color }}{% endif %}">
-                <i class="{{ i.icon }}"></i>
-                <h3>{{ i.title }}</h3>
-            </div>
-        </a>
-    {% endfor %}
+    {% if include.title %}
+        <header class="widget-header">
+            <h3>{{ include.title }}</h3>
+        </header>
+    {% endif %}
+    <div class="widget-body">
+        {% for i in site.data.banners[include.collection] %}
+            <a href="{{ i.link }}" target="{{ i.target | default: '_blank' }}" class="widget-banner">
+                <div style="background: {{ i.background }}{% if i.color %}; color: {{ i.color }}{% endif %}">
+                    <i class="{{ i.icon }}"></i>
+                    <h3>{{ i.title }}</h3>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 </div>

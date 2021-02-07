@@ -27,22 +27,24 @@
 
 
         <footer class="page-footer w3-cell-row">
-            <div class="page-copyrights w3-cell w3-mobile">{{ site.data.strings.footer_copyright }}</div>
+            <div class="page-copyrights w3-cell w3-mobile{% if site.data.navigations.social == null %} w3-center{% endif %}">{{ site.data.strings.footer_copyright }}</div>
 
-            <nav class="page-footer-nav w3-cell w3-cell-middle w3-mobile">
-                {% if site.data.navigations.social %}
-                    {% for ni in site.data.navigations.social %}
-                        <a href="{{ ni.url }}" target="{{ ni.target | default: '_blank' }}">
-                            {% if ni.icon %}
-                                <i class="{{ ni.icon }}"></i>
-                            {% endif %}
-                            <span class="w3-hide">{{ ni.title }}</span>
-                        </a>
-                    {% endfor %}
-                {% else %}
-                    &nbsp;
-                {% endif %}
-            </nav>
+            {% if site.data.navigations.social %}
+                <nav class="page-footer-nav w3-cell w3-cell-middle w3-mobile">
+                    {% if site.data.navigations.social %}
+                        {% for ni in site.data.navigations.social %}
+                            <a href="{{ ni.url }}" target="{{ ni.target | default: '_blank' }}" title="{{ ni.title }}">
+                                {% if ni.icon %}
+                                    <i class="{{ ni.icon }}"></i>
+                                {% endif %}
+                                <span class="w3-hide">{{ ni.title }}</span>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </nav>
+            {% endif %}
         </footer>
 
 
