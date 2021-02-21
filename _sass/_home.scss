@@ -304,9 +304,10 @@ a {
         margin: 0;
 
         figcaption {
-            padding: 8px 0;
-            font-size: $small_font_size;
+            padding: 4px 0 0 0;
+            font-size: $x_small_font_size;
             font-style: italic;
+            text-align: center;
             color: $text_color_secondary;
         }
     }
