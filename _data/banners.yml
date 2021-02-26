@@ -9,13 +9,13 @@ telegram:
   -
     background: "linear-gradient(to right, #2193b0, #6dd5ed)"
     link: "https://t.me/linux98ir"
-    icon: "fab fa-telegram"
-    title: "گروه تلگرامی لینوکس 98"
+    icon: "fab fa-telegram-plane"
+    title: "گروه تلگرام"
   -
     background: "linear-gradient(to right, #2193b0, #6dd5ed)"
     link: "https://t.me/linux98dotir"
-    icon: "fab fa-telegram"
-    title: "کانال تلگرامی لینوکس 98"
+    icon: "fab fa-telegram-plane"
+    title: "کانال تلگرام"
 
 social:
   -
@@ -23,3 +23,8 @@ social:
     link: "https://www.youtube.com/channel/UCU_SZ-kFvJCdUdIeYh-3cGA"
     icon: "fab fa-youtube"
     title: "کانال یوتیوب"
+  -
+    background: "linear-gradient(to right, #e53e72, #df0f50)"
+    link: "https://www.aparat.com/linux98"
+    icon: "fas fa-video"
+    title: کانال آپارات
