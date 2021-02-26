@@ -64,6 +64,10 @@ img {
     &:hover {
         transition: all .3s;
     }
+
+    &.emoji {
+        display: inline-block;
+    }
 }
 
 a {
