@@ -64,7 +64,6 @@ defaults:
 exclude:
     - CNAME
     - emoji-cheat-sheet.md
-    - LICENSE
     - README.md
 
 
