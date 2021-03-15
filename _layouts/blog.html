@@ -78,25 +78,32 @@ layout: base
         </header>
 
         <div class="article-content">
-            {% assign excerpt = post.content %}
+            {% assign post_content = post.content %}
             {% if post.content contains site.excerpt_separator %}
-                {% assign excerpt = post.excerpt %}
+                {% assign post_content = post.excerpt %}
             {% endif %}
 
             {% if post.image %}
+                {% assign paragraph_count_in_post_content = post_content | split: '<p>' | size | minus: 1 %}
                 <a href="{{ post.url | relative_url }}">
-                    <img src="{{ post.image }}" alt="{{ post.title }}" class="article-image article-image-small w3-hover-opacity w3-right"{% if excerpt.size < 256 %} style="width: 100%"{% endif %}>
+                    <img src="{{ post.image }}" alt="{{ post.title }}" class="article-image article-image-small w3-hover-opacity w3-right"{% if post_content.size < 450 and paragraph_count_in_post_content < 3 %} style="width: 100%"{% endif %}>
                 </a>
             {% endif %}
 
-            {{ excerpt }}
+            {{ post_content }}
         </div>
 
-        {% if post.content contains site.excerpt_separator %}
-            <footer class="article-footer">
-                <a href="{{ post.url | relative_url }}#read-more" class="read-more">{{ site.data.strings.read_more_link }}</a>
-            </footer>
-        {% endif %}
+        <div style="clear: both !important"></div>
+
+        <footer class="article-footer">
+            {% if post.content contains site.excerpt_separator %}
+                <a href="{{ post.url | relative_url }}#read-more" class="read-more w3-button w3-hover-none">{{ site.data.strings.read_more_link }}</a>
+            {% endif %}
+            <a href="#!" class="read-it-later w3-button w3-hover-none" onclick="javascript:void(0); window.open('https://getpocket.com/edit?url={{ post.url | absolute_url }}','popUpWindow','height=500,width=720,left=256,top=256,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');">
+                <i class="far fa-bookmark"></i>
+                بعدا بخوانید
+            </a>
+        </footer>
     </article>
 {% endfor %}
 
