@@ -30,6 +30,18 @@ layout: none
 
     {% feed_meta %}
 
+    <script type="text/javascript">
+        (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/linux98.ir/native-linux98.ir-17209.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+        })();
+    </script>
+
     {% if jekyll.environment == "production" and site.google_analytics %}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
         <script>
