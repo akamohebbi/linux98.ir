@@ -1,7 +1,7 @@
 akamohebbi:
-  picture: /uploads/avatar_akamohebbi.jpg
+  show_author_box: false
   name: آکام محبی
-  bio: آکام هستم. یه برنامه نویس خسته که هیچ وقت نتونست کارشناسی رو تموم کنه و بخاطر گیم بازی کردن نتونست لینوکس نصب کنه. استاد از دست دادن فرصت های زندگی و یه نمونه خیلی خوب برای اینکه ازش عبرت بگیرید
+
 
 mtlouk:
   picture: /uploads/mtlouk.jpg

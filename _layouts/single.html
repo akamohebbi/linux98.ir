@@ -110,7 +110,7 @@ layout: base
 </article>
 
 
-{% if page.type == "post" and site.data.authors[page.author] %}
+{% if page.type == "post" and site.data.authors[page.author] and site.data.authors[page.author].show_author_box != false %}
     <div class="article-author">
         {% assign author = site.data.authors[page.author] %}
         <div class="w3-cell w3-mobile w3-center author-picture">
@@ -121,14 +121,16 @@ layout: base
             <h4 class="author-name"><small>نویسنده: </small>{{ author.name }}</h4>
             <p class="author-bio">{{ author.bio }}</p>
 
-            <nav class="author-links">
-                {% for i in author.links %}
-                    <a href="{{ i.url }}" target="{{ i.target | default: '_blank' }}">
-                        <i class="{{ i.icon | default: 'fas fa-link' }}"></i>
-                        <span class="w3-hide-small">{{ i.title }}</span>
-                    </a>
-                {% endfor %}
-            </nav>
+            {% if author.links %}
+                <nav class="author-links">
+                    {% for i in author.links %}
+                        <a href="{{ i.url }}" target="_blank">
+                            <i class="{{ i.icon | default: 'fas fa-link' }}"></i>
+                            <span class="w3-hide-small">{{ i.title }}</span>
+                        </a>
+                    {% endfor %}
+                </nav>
+            {% endif %}
         </div>
     </div>
 {% endif %}
