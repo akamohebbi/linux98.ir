@@ -92,9 +92,22 @@ a {
     background-size: cover;
 }
 
+.page-header-wallpaper-cover {
+    height: 100%;
+    background-color: rgba($color: $text_color_primary, $alpha: 0.16);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+}
+
 .page-header-nav {
+    z-index: 2;
+    position: relative;
     background-color: #333333;
     color: #ffffff;
+    box-shadow: 2px 2px 4px rgba($color: #333333, $alpha: 0.08);
 }
 
 .site-title {
@@ -129,6 +142,8 @@ a {
 }
 
 .page-ef-wrapper {
+    z-index: 2;
+    position: relative;
     background-color: #ffffff;
     margin-top: -128px;
     margin-bottom: 8.33333%;
@@ -327,6 +342,18 @@ a {
         &:hover {
             text-decoration: none;
             color: $text_color_secondary;
+        }
+    }
+
+    q,
+    blockquote {
+        border-right: 4px solid $theme_color;
+        padding: 8px 16px 8px 0;
+        font-size: 128%;
+        color: $text_color_secondary;
+
+        p {
+            margin: 0;
         }
     }
 }
