@@ -77,31 +77,10 @@ layout: base
 
     {% if page.type == "post" %}
         <footer class="article-footer w3-cell-row">
-            <div class="w3-cell w3-mobile">
-                <div class="article-tags">
-                    {% for t in page.tags %}
-                        <span class="article-tag"><a href="{{ '/tags/' | relative_url }}#{{ t }}">{{ t }}</a></span>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="w3-cell w3-cell-middle w3-mobile">
-                <!-- AddToAny BEGIN -->
-                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-                    <a class="a2a_button_telegram"></a>
-                    <a class="a2a_button_whatsapp"></a>
-                    <a class="a2a_button_facebook"></a>
-                    <a class="a2a_button_twitter"></a>
-                </div>
-                <script>
-                    var a2a_config = a2a_config || {};
-                    a2a_config.onclick = 1;
-                    a2a_config.locale = "fa";
-                    a2a_config.num_services = 2;
-                </script>
-                <script async src="https://static.addtoany.com/menu/page.js"></script>
-                <!-- AddToAny END -->
+            <div class="article-tags">
+                {% for t in page.tags %}
+                    <span class="article-tag"><a href="{{ '/tags/' | relative_url }}#{{ t }}">{{ t }}</a></span>
+                {% endfor %}
             </div>
         </footer>
     {% endif %}
@@ -135,15 +114,9 @@ layout: base
 
 {% if page.comments == true and site.disqus_shortname %}
     <div class="article-comments">
-        <div id="disqus_thread" style="display: none;"></div>
+        <div id="disqus_thread"></div>
 
-        <div id="disqus_loading_info" class="w3-center">
-            <i class="fas fa-spinner fa-spin" id="disqus_loading_info_icon"></i>
-            <div id="disqus_loading_info">
-                <h3 id="disqus_loading_title" style="margin: 0; line-height: 1.2;"></h3>
-                <p id="disqus_loading_description" style="margin: 0;"></p>
-            </div>
-        </div>
+        <button id="load_disqus">بارگذاری فونت کامنت ها</button>
 
         <script>
             var disqus_config = function () {
@@ -162,24 +135,28 @@ layout: base
                 disqus.async = true;
                 disqus.setAttribute('data-timestamp', + new Date());
                 
-                (document.head || document.body).appendChild(disqus);
+                document.getElementById("load_disqus").onclick = function() {
+                    this.style.display = "none";
+                    (document.head || document.body).appendChild(disqus);
+                }
 
 
-                disqus.onload = function() {
-                    disqus_loading_info.style.display = "none";
-                    setTimeout(function() {
-                        disqus_thread.style.display = "block";
-                    }, Math.floor(Math.random() * 1000 + 640));
-                };
+
+                // disqus.onload = function() {
+                //     disqus_loading_info.style.display = "none";
+                //     setTimeout(function() {
+                //         disqus_thread.style.display = "block";
+                //     }, Math.floor(Math.random() * 1000 + 640));
+                // };
 
 
-                disqus.onerror = function() {
-                    document.getElementById("disqus_loading_info_icon").style.display = "none";
-                    document.getElementById("disqus_loading_title").innerText = 
-                        "{{ site.data.strings.disqus_load_faild_msg_title }}";
-                    document.getElementById("disqus_loading_description").innerText = 
-                        "{{ site.data.strings.disqus_load_faild_msg_description }}";
-                };
+                // disqus.onerror = function() {
+                //     document.getElementById("disqus_loading_info_icon").style.display = "none";
+                //     document.getElementById("disqus_loading_title").innerText = 
+                //         "{{ site.data.strings.disqus_load_faild_msg_title }}";
+                //     document.getElementById("disqus_loading_description").innerText = 
+                //         "{{ site.data.strings.disqus_load_faild_msg_description }}";
+                // };
             })();
         </script>
         <noscript>{{ site.data.strings.disqus_noscript }}</noscript>

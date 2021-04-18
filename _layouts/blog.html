@@ -5,10 +5,11 @@ layout: base
 
 
 
-{% if page.url == '/' %}
-    {% include widgets/slider.html count=4 %}
-{% endif %}
-
+{% comment %}
+    {% if page.url == '/' %}
+        {% include widgets/slider.html count=4 %}
+    {% endif %}
+{% endcomment %}
 
 
 {% for post in paginator.posts %}
