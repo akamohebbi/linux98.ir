@@ -4,21 +4,25 @@ layout: none
 @charset "UTF-8";
 
 
-
 @font-face {
-    font-family: 'Estedad';
-    font-weight: 300;
-    src: url('../fonts/estedad/Estedad-Light.woff2') format('woff2');
-}
-@font-face {
-    font-family: 'Estedad';
+    font-family: Vazir;
+    src: url('../fonts/vazir/Vazir-Regular.eot');
+    src: url('../fonts/vazir/Vazir-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vazir/Vazir-Regular.woff2') format('woff2'),
+         url('../fonts/vazir/Vazir-Regular.woff') format('woff'),
+         url('../fonts/vazir/Vazir-Regular.ttf') format('truetype');
     font-weight: normal;
-    src: url('../fonts/estedad/Estedad-Medium.woff2') format('woff2');
+    font-style: normal;
 }
 @font-face {
-    font-family: 'Estedad';
+    font-family: Vazir;
+    src: url('../fonts/vazir/Vazir-Bold.eot');
+    src: url('../fonts/vazir/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vazir/Vazir-Bold.woff2') format('woff2'),
+         url('../fonts/vazir/Vazir-Bold.woff') format('woff'),
+         url('../fonts/vazir/Vazir-Bold.ttf') format('truetype');
     font-weight: bold;
-    src: url('../fonts/estedad/Estedad-Bold.woff2') format('woff2');
+    font-style: normal;
 }
 
 @font-face {
@@ -45,7 +49,7 @@ $theme_color: #ffc020;
 $text_color_primary: #333333;
 $text_color_secondary: #a1a1a1;
 
-$estedad_font_family: 'Estedad', sans-serif;
+$estedad_font_family: 'Vazir', sans-serif;
 $lalezar_font_family: 'Lalezar', cursive;
 
 $xxx_small_font_size: .5rem;
