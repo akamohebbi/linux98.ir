@@ -25,24 +25,6 @@ layout: none
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Lalezar';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Lalezar'), local('Lalezar-Regular'), url(../fonts/lalezar/zrfl0HLVx-HwTP82YaL4IxL0.woff2) format('woff2');
-    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
-}
-@font-face {
-    font-family: 'Lalezar';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Lalezar'), local('Lalezar-Regular'), url(../fonts/lalezar/zrfl0HLVx-HwTP82Yaf4Iw.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, 
-        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
 
 
 $theme_color: cornflowerblue;
@@ -50,7 +32,7 @@ $text_color_primary: #333333;
 $text_color_secondary: #a1a1a1;
 
 $estedad_font_family: 'Vazir', sans-serif;
-$lalezar_font_family: 'Lalezar', cursive;
+$lalezar_font_family: $estedad_font_family;
 
 $xxx_small_font_size: .5rem;
 $xx_small_font_size: .7rem;
