@@ -41,14 +41,13 @@ body {
 
 html {
     scroll-behavior: smooth;
-    font-size: 15px;
 }
 
 body {
     background-color: #f9f9f9;
     color: #333333;
     font-family: $estedad_font_family;
-    font-size: 1rem;
+    font-size: 1.1em;
 }
 
 h1,
@@ -84,7 +83,7 @@ a {
 }
 
 .page-header {
-    height: 100%;
+    height: 84%;
     background-color: #333333;
     background-image: url("/img/2016-11-14_gnu-linux_wallpaper.jpg");
     background-position: center;
@@ -93,8 +92,8 @@ a {
 }
 
 .page-header-wallpaper-cover {
-    height: 100%;
-    background-color: rgba($color: $text_color_primary, $alpha: 0.16);
+    height: 84%;
+    background-color: rgba($color: $theme_color, $alpha: 0.64);
     position: absolute;
     top: 0;
     right: 0;
@@ -107,7 +106,7 @@ a {
     position: relative;
     background-color: #333333;
     color: #ffffff;
-    box-shadow: 2px 2px 4px rgba($color: #333333, $alpha: 0.08);
+    box-shadow: 0 4px 4px rgba($color: #333333, $alpha: 0.32);
 }
 
 .site-title {
@@ -147,7 +146,7 @@ a {
     background-color: #ffffff;
     margin-top: -128px;
     margin-bottom: 8.33333%;
-    border: 1px solid #eeeeee;
+    border-radius: 8px;
     box-shadow: 2px 2px 4px rgba($color: #333333, $alpha: 0.08);
 }
 
@@ -271,10 +270,16 @@ a {
 }
 
 .article-image-small {
-    width: 400px;
+    width: 300px;
     height: auto;
     margin-bottom: 16px;
     margin-left: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.08);
+
+    &:hover {
+        opacity: 0.84;
+    }
 }
 
 .article-content {
@@ -402,6 +407,67 @@ a {
         &:last-child {
             margin-left: 0;
         }
+    }
+}
+
+.article-share-buttons {
+    margin-top: 64px;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.16);
+}
+
+.article-share-button {
+    padding: 16px;
+    color: white;
+    font-size: 1.32em;
+    
+    &:hover {
+        opacity: 0.64;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+#article_share_button_twitter {
+    background-color: #1da1f2;
+    border-radius: 8px 0 0 8px;
+    border-right: 2px solid white;
+    &:hover {
+        background-color: #1da1f2 !important;
+        color: white !important;
+    }
+}
+
+#article_share_button_facebook {
+    background-color: #3b5998;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    &:hover {
+        background-color: #3b5998 !important;
+        color: white !important;
+    }
+}
+
+#article_share_button_telegram {
+    background-color: #0088cc;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    &:hover {
+        background-color: #0088cc !important;
+        color: white !important;
+    }
+}
+
+#article_share_button_whatsapp {
+    background-color: #075e54;
+    border-left: 2px solid white;
+    border-radius: 0 8px 8px 0;
+    &:hover {
+        background-color: #075e54 !important;
+        color: white !important;
     }
 }
 

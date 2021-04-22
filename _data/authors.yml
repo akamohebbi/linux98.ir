@@ -1,16 +1,34 @@
 akamohebbi:
-  show_author_box: false
-  name: آکام محبی
+    # show_author_box: false
+    picture: /img/favicon.png
+    name: آکام محبی
+    links:
+        -
+            title: وبسایت آکام
+            url: https://akamohebbi.ir/
+        -
+            title: ایمیل
+            url: "mailto:akamohebbi@gmail.com"
+            icon: "fas fa-envelope-open-text"
+        -
+            title: گیت‌هاب
+            url: https://github.com/akamohebbi
+            icon: "fab fa-github"
+        -
+            title: اینستاگرام
+            url: https://instagram.com/akamohebbi
+            icon: "fab fa-instagram"
+            color: pink
 
 
 mtlouk:
-  picture: /uploads/mtlouk.jpg
+  picture: /img/mtlouk.jpg
   name: matin
   bio: :) let's have some Fun with linux 
 
 
 aminyousefnejad:
-  picture: /uploads/avatar_aminyousefnejad.jpg
+  picture: /img/avatar_aminyousefnejad.jpg
   name: امین یوسف نژاد
   bio: امین هستش. یه برنامه نویس خفن جاوا که از وقتی دیدمش داشت با لینوکس و زوبونتو حال می کرد. بعد از تموم شدن از کارشناسی گویا به پایتون سویچ کرده. کسی که همیشه منو با پایتون مسخره می کرد -_- نوشته شده توسط آکام
   links:
