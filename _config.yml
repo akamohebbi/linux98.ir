@@ -1,14 +1,10 @@
 url: https://linux98.ir
 
+language: fa_IR
+direction: rtl
 charset: UTF-8
 
-theme_color: "#333333"
 
-# language
-lang: fa_IR
-
-# direction
-dir: rtl
 
 title: لینوکس 98
 description: منبع فارسی لینوکس و نرم افزارهای متن باز
@@ -31,36 +27,12 @@ permalink: /:year/:month/:slug/
 future: false
 
 collections:
-    theme:
-        output: true
-        permalink: /theme/:path
-    uploads:
-        output: true
-        permalink: /uploads/:path
     pages:
         output: true
         permalink: /:slug/
-
-
-defaults:
-    # pages
-    -
-        scope:
-            path: ""
-            type: "pages"
-        values:
-            layout: single
-            type: page
-            comments: true
-    # posts
-    -
-        scope:
-            path: ""
-            type: "posts"
-        values:
-            layout: single
-            type: post
-            comments: true
+    statics:
+        output: true
+        permalink: /:path
 
 
 exclude:
@@ -77,5 +49,5 @@ plugins:
 
 google_site_verification: cq6a3Ab_v7AW1E_BlWFNW_uwNWoHpiN4x-LVBe1MaRQ
 
-paginate: 8
+paginate: 10
 paginate_path: /page/:num/

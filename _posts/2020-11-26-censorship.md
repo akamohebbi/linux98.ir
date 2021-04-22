@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-26 17:40:00 +0330
 jdate: 1399-09-6
 title: آزادی یا محدودیت ؟
 author: aminyousefnejad
-image: /uploads/rostyslav-savchyn-gdQ43QHExKA-unsplash.jpg
+image: /img/rostyslav-savchyn-gdQ43QHExKA-unsplash.jpg
 categories:
     - تکنولوژی
 tags:

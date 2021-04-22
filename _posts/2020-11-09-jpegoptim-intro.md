@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-09 11:07:01 +0330
 jdate: 1399-08-19
 title: کم کردن حجم فایل های JPEG با کمک ترمینال
 author: akamohebbi
-image: /uploads/sai-kiran-anagani-Tjbk79TARiE-unsplash.jpg
+image: /img/sai-kiran-anagani-Tjbk79TARiE-unsplash.jpg
 categories:
     - آموزش
 tags:

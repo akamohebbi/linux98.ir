@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-12-03 06:36:01 +0330
 jdate: 1399-09-13
 title: ساخت پکیج debian

@@ -1,4 +1,8 @@
 ---
+slug: linux98
+layout: single
+type: page
+comments: true
 title: تماس و درباره لینوکس ۹۸
 ---
 

@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 title: استفاده از Tor با حالت Transparent proxy
 date: 2021-01-18 21:53:01 +0330
 jdate: 1399-10-29
 author: akamohebbi
-image: /uploads/tor-wallpaper-with-matrix-style.jpg
+image: /img/tor-wallpaper-with-matrix-style.jpg
 categories:
     - لینوکس
     - Tor

@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-21 21:40:10 +0330
 jdate: 1399-09-01
 title: لینوکس را بیشتر بشناسیم (پارت۱)مقدمه
 author: aminyousefnejad
-image: /uploads/linux_kernel/wallpaper.png
+image: /img/linux_kernel/wallpaper.png
 categories:
     - لینوکس
 tags:
@@ -33,13 +36,13 @@ tags:
 
  کرنل های یکپارچه بین بخش های داخلی و زیر سیستم های خودش کنترل دسترسی نداره  و توابع عمومی مستقیما توسط زیر سیستم های دیگه فراخوانی میشن . کرنل های یکپارچه منطقا یه جدا سازی هایی دارن مخصوصا دیوایس درایور از بقیه بخش ها جدا ست و در عین حال خیلی بزرگتره چون باید بتونه با انواع و اقسام سخت افزار ها کار کنه . لینوکس جزء این دسته هست .
 
-![Monolithic Kernels](/uploads/linux_kernel/monolithic.png)
+![Monolithic Kernels](/img/linux_kernel/monolithic.png)
 
 ## Micro Kernels
 
 تو میکرو کرنل بخش های بزرگ کرنل از هم جدا هستن . مثلا اینطور تصور کنید که اول کرنل که خیلی کوچیکتر هست تو حافظه مستقر می شه و بعد بخش های دیگه مثلا فایل سیستم به عنوان ماژول بهش اضافه می شه . این ماژول ها تو فضای کاربر اجرا میشن . کرنل های این مدلی در حدی هستن که بتونن فضای آدرس ،  پروسس ها و ترد ها رو مدیریت کنن . کرنل مینیکس که شبه یونیکس هم هست جز این دسته س . 
 
-![Micro Kernels](/uploads/linux_kernel/micro.png)
+![Micro Kernels](/img/linux_kernel/micro.png)
 
 ## میکرو یا یکپارچه ؟
 

@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-13 22:00:01 +0330
 jdate: 1399-08-23
 title: یادگیری ماشین با حداقل داده
 author: aminyousefnejad
-image: /uploads/ai-nodata/Rhinocorn.webp
+image: /img/ai-nodata/Rhinocorn.webp
 categories:
     - تکنولوژی
 tags:
@@ -19,7 +22,7 @@ tags:
 
 
 
-![rhinocorn](/uploads/ai-nodata/unicorn.jpg)
+![rhinocorn](/img/ai-nodata/unicorn.jpg)
 
 امممم .... خیلی خب . 
 
@@ -29,7 +32,7 @@ tags:
 
 ## Less than one - shot چطور کار می کنه 
 
-![image of sample 0 to 9 handwriting](/uploads/ai-nodata/10_MnistExamples.png)
+![image of sample 0 to 9 handwriting](/img/ai-nodata/10_MnistExamples.png)
 
 محققا اول تجربه ای که با دیتا ست بینایی-کامیپوتر به اسم [MNIST](http://yann.lecun.com/exdb/mnist/)داشتن رو توضیح میدن . منیست دیتا ستی که حاوی ۶۰ هزار عکس آزمایشی اعداد ۰ تا ۹ با دست خط های مختلف هست .
 
@@ -38,7 +41,7 @@ tags:
 اما محققا میخاستن که کم کردن داده های ورودی رو جلو تر ببرن و گفتن اگه ممکنه  ۶۰ هزار تا عکس رو تو ۱۰ تا جمع کنیم چرا نتونیم تا ۵ فشرده تر نکنیم ؟؟ 
 
 تکنیکشون این بود که تصاویری درست کنن که چنتا عدد رو با هم ترکیب کنن با لیبل های هیبرید یا سافت به خورد مدل بدن . اگه به عدد 3 نگا کنید یه جورایی شبیه 8 هم هست اما اصلا شبیه 7 نیست . در واقع کار سافت لیبل ها اینکه ویژگی های مشترک رو پیدان کنن و به جا اینکه به ماشین بگن این تصویر عدد 3 هست . بهش میگن این تصویر ۶۰٪  عدد 3 ، ۳۰٪ عدد 8 ، و ۱۰٪ عدد 0 هست . 
-![distilled form MNIST](/uploads/ai-nodata/distilled-mnist.png)
+![distilled form MNIST](/img/ai-nodata/distilled-mnist.png)
 
 
 ## محدودیت های این تکنیک چیه 
@@ -51,11 +54,11 @@ tags:
 
 برای فهمیدن اینکه kNN چطور کار میکنه ، کلاس بندی کردن میوه ها رو در نظر بگیرین . اگه میخوایین که یه مدل kNN رو  آموزش بدین که فرق سیب و پرتقال رو بفهمه ، اول باید ویژگی هایی رو انتخاب کنید که بر اساس اون به مدل ، میوه ها رو نشون میدین . احتمالا رنگ و وزن رو انتخاب کنید . خب پس برای هر سیب و پرتقالی که به kNN نشون میدین یک نقطه رو نمودار ترسیم میشه که محور ایکس  رنگ و Y وزن هست . بعد از اینکه kNN همه این نقاط روی نمودار ترسیم کرد یه خط مرزی بین نقاط سیب و پرتقال میکشه . اینکار نمودارو تقریبا تبدیل به دوتا کلاس میکنه . حالا الگوریتم تصمیم میگیره دیتای جدیدی که روی نمودار ترسیم میشه کدوم طرف خط باشه سیبه یا پرتقال . 
 
-![Plotting apples (green and red dots ) and orange](/uploads/ai-nodata/chart.png)
+![Plotting apples (green and red dots ) and orange](/img/ai-nodata/chart.png)
 
 پس اومدن یه سری دیتا ست با تکنیک  LO-shot  و سافت لیبل های دقیق ساختن و  به خورد یه مدل kNN دادن . نتیجه این بود که این الگوریتم تونست نمودار رو ترسیم و کلاس های بیشتری نسبت به داده های ورودیش ترسیم کنه .  هر کدوم از ناحیه های رنگی یه کلاس رو نمایش میدن که طرحای باحالی داره . 
 
-![knn-ploting-wiht-loshot](/uploads/ai-nodata/knn-with-LO-shot.png)
+![knn-ploting-wiht-loshot](/img/ai-nodata/knn-with-LO-shot.png)
 
 البته که این تئوری ها یه سری محدودیت هایی دارن همین LO-shot باعث میشه الگوریتم هامون پیچیده تر بشن و کار ساختن سافت لیبل ها سخت میشه . و شبکه های عصبی کار رو پیچیده تر می کنن . 
 

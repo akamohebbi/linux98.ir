@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 title: معرفی ۹ ابزار پایتون برای سیستم ادمین ها 
 date: 2020-11-10 14:46:01 +0330
 jdate: 1399-8-20

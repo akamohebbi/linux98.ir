@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2021-01-31 17:51:01 +0330
 jdate: 1399-11-12
 title: راه حل ساده برای ترجمه انگلیسی به فارسی در لینوکس
 author: akamohebbi
-image: /uploads/sai-kiran-anagani-Tjbk79TARiE-unsplash.jpg
+image: /img/sai-kiran-anagani-Tjbk79TARiE-unsplash.jpg
 categories:
     - آموزش
 tags:

@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-12-09 13:36:01 +0330
 jdate: 1399-09-19
 title: اشتراک گذاری فایل با samba

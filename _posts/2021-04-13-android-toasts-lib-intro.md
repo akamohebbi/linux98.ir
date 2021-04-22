@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2021-04-13 10:01:01 +0330
 jdate: 1400-01-24
 title: معرفی ۷ کتابخانه اندروید برای ساختن Toast
@@ -9,7 +12,7 @@ tags:
     - معرفی
     - آموزش برنامه نویسی اندروید
     - کتابخانه های اندرویدی
-image: /uploads/android-toast-libs-intro/android_toast_example_linux98ir.jpeg
+image: /img/android-toast-libs-intro/android_toast_example_linux98ir.jpeg
 ---
 
 تا قبل از اندروید ۵ که گوگل متریال دیزاین رو معرفی کرد توسعه دهنده  های اندروید خیلی خوب می تونستن از Toast ها استفاده کنن (البته حالا هم  استفاده می کنن و بعد از معرفی Snackbar و متد های جدید طراحی ظاهر برنامه  دیگه یجورایی Toast داره فراموش میشه) صد البته که کتابخانه های شخصی ثالث خفنی هم در  کنار SDK استاندارد وجود داشت. شاید Toast استاندارد تو اندروید دیگه به قولی دولوپریش deprecated شده باشه اما بازم هستن کتابخونه خفن هایی که میشه ازشون استفاده کرد و بعضی هاشون هنوزم در حال توسعه هستن.
@@ -24,7 +27,7 @@ image: /uploads/android-toast-libs-intro/android_toast_example_linux98ir.jpeg
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/dynamictoast_example_linux98ir.png"
+	src="/img/android-toast-libs-intro/dynamictoast_example_linux98ir.png"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید DynamicToast"
 %}
 
@@ -68,7 +71,7 @@ DynamicToast.Config.getInstance()
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/noty_example_linux98ir.png"
+	src="/img/android-toast-libs-intro/noty_example_linux98ir.png"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید Noty"
 %}
 
@@ -84,7 +87,7 @@ Noty.init(YourActivity.this, "Your warning message", yourLayout, Noty.WarningSty
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/simpletoast_example_linux98ir.png"
+	src="/img/android-toast-libs-intro/simpletoast_example_linux98ir.png"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید SimpleToast"
 %}
 
@@ -102,7 +105,7 @@ SimpleToast.warning(Context, CharSequence);
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/styleabletoast_example_linux98ir.png"
+	src="/img/android-toast-libs-intro/styleabletoast_example_linux98ir.png"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید StyleableToast"
 %}
 
@@ -114,7 +117,7 @@ StyleableToast تموم اون چیزیه که نفر می تونه بخواد. 
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/tastytoast_example_linux98ir.jpeg"
+	src="/img/android-toast-libs-intro/tastytoast_example_linux98ir.jpeg"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید TastyToast"
 %}
 
@@ -169,7 +172,7 @@ TastyToast.makeText(
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/supertoasts_example_linux98ir.jpeg"
+	src="/img/android-toast-libs-intro/supertoasts_example_linux98ir.jpeg"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید SuperToasts"
 %}
 
@@ -194,7 +197,7 @@ SuperActivityToast.create(getActivity(), new Style(), Style.TYPE_BUTTON)
 
 {%
 	include helpers/image.html
-	src="/uploads/android-toast-libs-intro/toasty_example_linux98ir.jpeg"
+	src="/img/android-toast-libs-intro/toasty_example_linux98ir.jpeg"
 	alt="نمونه Toast های ساخته شده با کمک کتابخانه اندروید Toasty"
 %}
 

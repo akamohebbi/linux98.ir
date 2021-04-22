@@ -1,3 +1,16 @@
+# blog title on page number X
+# %total_pages% and %current_page% will be replaced with page numbers
+paged_title: "برگه %current_page% از %total_pages%"
+
+
+
+
+
+
+
+
+
+
 widget:
   search:
     title: جستجو

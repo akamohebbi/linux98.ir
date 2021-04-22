@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-12-18 19:12:00 +0330
 jdate: 1399-09-28
 title: بیت کوین vs طلا
 author: aminyousefnejad
-image: /uploads/bitcoin_vs_gold.jpeg
+image: /img/bitcoin_vs_gold.jpeg
 categories:
     - بیت کوین
     - بلاکچین

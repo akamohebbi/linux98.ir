@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-12-16 19:10:12 +0330
 jdate: 1399-10-26
 title: لینوکس را بیشتر بشناسیم (پارت5)Memory Management
 author: aminyousefnejad
-image: /uploads/linux_kernel/wallpaper.png
+image: /img/linux_kernel/wallpaper.png
 categories:
     - لینوکس
 tags:
@@ -34,7 +37,7 @@ tags:
 الان هر نوع دسترسی به حافظه فقط از طریق Virtual address ها اتفاق می افته حتی سی پی یو از این آدرسا استفاده می کنه که توسط MMU تبدیل به آدرس های فیزیکی می شن . این تبدیل به کمک page table انجام میشه . که خب یه جدوله که نشون میده فلان آدرس ویرچوال به کدوم آدرس فیزیکی اشاره داره . وقتی سی پی یو یه آدرس حافظه ویرچوال رو میخواد فریم نامبر اون آدرس ویرچوال رو استخراج میکنه و این عدد توسط page table تبدیل به عدد فیزیکال اون آدرس لاجیکال میشه . 
 
 
-![page table](/uploads/linux_kernel/linux-virtual-memory.png)
+![page table](/img/linux_kernel/linux-virtual-memory.png)
 
 
 مزایای ویرچوال مموری : 
@@ -45,7 +48,7 @@ tags:
 - تخصیص حافظه عادلانه 
 - Shared Virtual Memory : این ویژگی این امکان رو فراهم می کنه که پروسس ها به صورت اشتراکی از یه فضای حافظه استفاده کنن . این مورد برای shared library ها یا برنامه هایی مثل bash کاربرد داره . این برنامه یه قسمتی از حافظه رو اشغال می کنه و همه پروسس ها می تونن ازش بهره ببرن . 
 
-![virtual-memory](/uploads/linux_kernel/Virtual_memory.svg.png)
+![virtual-memory](/img/linux_kernel/Virtual_memory.svg.png)
 
 
 
@@ -66,7 +69,7 @@ tags:
 
 کاربرد zone ها مستقل از معماری هست برای مثال تو معماری که هیچ مشکلی برای انجام DMA وجود نداره ZONE_DMA خالی هست همین قضیه برای ZONE_HIGHMEM هم هست اگه تو معماری امکان مپ کردن کل حافظه وجود داره این زون خالی خواهد بود. 
 
-![memory zone](/uploads/linux_kernel/memory_zone.png)
+![memory zone](/img/linux_kernel/memory_zone.png)
 
 # تخصیص و آزاد کردن حافظه 
 
@@ -82,7 +85,7 @@ tags:
 - درخواست حافظه می تونه خیلی سریع تر پاسخ داده بشه 
 - مموری به دلیل fragmentation هدر نمی ره و استفاده از حافظه خیلی بهتری خواهیم داشت
 
-![relationship between caches , slabs and objects](/uploads/linux_kernel/slab_allocation.gif)
+![relationship between caches , slabs and objects](/img/linux_kernel/slab_allocation.gif)
 
 
 
@@ -94,22 +97,22 @@ tags:
 
 بعضی از مواقع پیدا کردن قسمت هایی از حافظه که به اندازه کافی بزرگ باشن و به درستی درکنار هم قرار گرفته باشن کار سختیه . روش های قبلی مثل ZONE_MOVABLE و روش های دیگه وجود داشتن ولی جا برای بهبود وجود داشت . برای شروع حافظه زیر رو در نظر بگیرید ، قسمت های قرمز رنگ قسمت هایی هستن که اختصاص یافتن و قسمت های سفید خالی هستن .
 
-![fragmented memory](/uploads/linux_kernel/fragmented_memory.png)
+![fragmented memory](/img/linux_kernel/fragmented_memory.png)
 
 
 
 در این حالت اگه ما درخواست یه یه پیچ به اندازه ۴ بلاک بکنیم این تخصیص صورت نمی گیره چون ۴ بلاک خالی پشت سرهم نداریم . حتی درخواست ۲ تا بلاک هم میسر نخواهد بود چون بلاک ها به درستی مرتب نشدن . ایجاست که Memory Compaction وارد میشه . این روش دوتا الگوریتم مجزا ست که یکی از اونها برای مثال از سمت چپ به راست شروع می کنه و یه لیست از بلاک های اختصاص یافته می سازه این بلاک ها باید پیج های قابل حرکت (Movable )  باشن . 
 
-![list of movable page](/uploads/linux_kernel/compaction1.png)
+![list of movable page](/img/linux_kernel/compaction1.png)
 
 و الگوریتم دیگه ای از سمت راست شروع میکنه و لیستی از پیج های خالی رو میسازه .
 
-![list of free page](/uploads/linux_kernel/compaction2.png)
+![list of free page](/img/linux_kernel/compaction2.png)
 
 
 این دو الگوریتم تو یه جایی به هم میرسن . بعد از این الگوریتم پیج های اختصاص یافته رو شیفت میده به سمت فضا های خالی . و نیتجه میشه شبیه شکل زیر 
 
-![defragmented memory](/uploads/linux_kernel/compaction3.png)
+![defragmented memory](/img/linux_kernel/compaction3.png)
 
 - این الگوریتم فقط در صورتی می تونه درست کار کنه پیج های درگیر اینکار همشون movable باشن اگه فقط یدونه پیج غیر قابل حرکت وجود داشته باشه کل کارو خراب میکنه . 
 

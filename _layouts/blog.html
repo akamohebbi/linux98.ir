@@ -87,7 +87,7 @@ layout: base
             {% if post.image %}
                 {% assign paragraph_count_in_post_content = post_content | split: '<p>' | size | minus: 1 %}
                 <a href="{{ post.url | relative_url }}">
-                    <img src="{{ post.image }}" alt="{{ post.title }}" class="article-image article-image-small w3-hover-opacity w3-right"{% if post_content.size < 450 and paragraph_count_in_post_content < 3 %} style="width: 100%"{% endif %}>
+                    <img src="{{ post.image }}" alt="{{ post.title }}" loading="lazy" class="article-image article-image-small w3-hover-opacity w3-right"{% if post_content.size < 450 and paragraph_count_in_post_content < 3 %} style="width: 100%"{% endif %}>
                 </a>
             {% endif %}
 

@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-12 11:30:12 +0330
 jdate: 1399-08-22
 title: شخصی سازی گراب
 author: aminyousefnejad
-image: /uploads/kraski-kisti-tsveta-bumaga.jpg
+image: /img/kraski-kisti-tsveta-bumaga.jpg
 categories:
     - لینوکس
 tags:
@@ -23,23 +26,23 @@ GNU GRUB یا خودمونی تر گراب ، در واقع بوت لودره ک
 
 ## [تم   مک ](https://www.gnome-look.org/p/1443844/)
 
-![mac_grub_theme](/uploads/grub-themes/1.png)
+![mac_grub_theme](/img/grub-themes/1.png)
 
 ## [تم  Xenlism](https://www.gnome-look.org/p/1440862/)
 
-![xenlism_grub_theme](/uploads/grub-themes/2.jpg)
+![xenlism_grub_theme](/img/grub-themes/2.jpg)
 
 ## [تم  Sleek](https://www.gnome-look.org/p/1414997/)
 
-![sleek_grub_theme](/uploads/grub-themes/3.png)
+![sleek_grub_theme](/img/grub-themes/3.png)
 
 ## [تم vimix](https://www.gnome-look.org/p/1009236/)
 
-![vimix_grub_theme](/uploads/grub-themes/4.jpg)
+![vimix_grub_theme](/img/grub-themes/4.jpg)
 
 ## [تم Tela](https://www.gnome-look.org/p/1307852/)
 
-![tela_grub_theme](/uploads/grub-themes/5.jpg)
+![tela_grub_theme](/img/grub-themes/5.jpg)
 
 **[There is MOREEEEEEEE !](https://www.gnome-look.org/browse/cat/109/ord/latest/)**
 
@@ -56,7 +59,7 @@ sudo ./install.sh
 
 گراب کاستومایزر یه واسط گرافیکی واسه کانفیگ کردن گراب هست . با این برنامه می تونید بوت انتری هارو حذف، تغییر نام و ترتبشونو عوض کنید . به کسایی که تازه با گنو/لینوکس آشنا شدن برنامه خوبیه و کار کردن باهاش خیلی راحته . می تونید دیفالت بوت ، بوت تایم اوت و خیلی چیزای دیگه رو هم تغییر بدید .  
 
-![grub-customizer](/uploads/grub-themes/grub-customizer.png)
+![grub-customizer](/img/grub-themes/grub-customizer.png)
 
 از اوبونتو ۱۹٫۰۱ به بعد تو ریپوزیتوری خود اوبونتو هست واسه ورژنای پایین تر اوبونتو باید ریپوزیتوری ppa اضافه کنید . 
 

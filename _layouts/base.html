@@ -2,31 +2,30 @@
 layout: none
 ---
 <!DOCTYPE html>
-<html lang="{{ site.lang }}" dir="{{ site.dir }}">
+<html lang="{{ site.language }}" dir="{{ site.direction }}">
 <head>
     <meta charset="{{ site.charset }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="{{ site.theme_color }}">
 
     {% if page.title %}
         <title>{{ page.title }} | {{ site.title }}</title>
     {% elsif page.url contains '/page/' %}
-        <title>برگه {{ paginator.page }} از {{ paginator.total_pages }} | {{ site.title }}</title>
+        <title>{{ site.data.strings.paged_title | replace: '%current_page%', paginator.page | replace: '%total_pages%', paginator.total_pages }} | {{ site.title }}</title>
     {% else %}
         <title>{{ site.title }} | {{ site.description }}</title>
     {% endif %}
 
     {% seo title=false %}
 
-    <link rel="shortcut icon" href="{{ '/theme/img/favicon.png' | relative_url }}">
-    <link rel="icon" type="image/png" href="{{ '/theme/img/icon.png' | relative_url }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ '/theme/img/icon.png' | relative_url }}">
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="icon" type="image/png" href="/img/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/icon.png">
 
-    <link rel="stylesheet" href="{{ '/theme/css/fontawesome.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/theme/css/w3.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/theme/css/animate.min.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/theme/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="/css/fontawesome.css">
+    <link rel="stylesheet" href="/css/w3.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="/css/main.css">
 
     {% feed_meta %}
 
@@ -40,10 +39,11 @@ layout: none
         </script>
     {% endif %}
 </head>
-<body class="dir-{{ site.dir }} lang-{{ site.lang }} layout-{{ page.layout }}{% if page.body_classes %} {{ page.body_classes | join: ' ' }}{% endif %}">
+<body>
 
     {{ content }}
     
-    <script src="{{ '/theme/js/global.js' | relative_url }}"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <script src="/js/global.js"></script>
 </body>
 </html>

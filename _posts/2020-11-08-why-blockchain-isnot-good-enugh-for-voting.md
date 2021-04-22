@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-08 21:46:00 +0330
 jdate: 1399-08-18
 title: "چرا بلاکچین هنوز جوابگوی نیازهای سیستم رای گیری نیست؟"

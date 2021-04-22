@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-10 09:40:01 +0330
 jdate: 1399-08-20
 title: "شخصی سازی دسکتاپ های لینوکسی"
 author: akamohebbi
-image: /uploads/yannis-papanastasopoulos-kKzbyDeb62M-unsplash.jpg
+image: /img/yannis-papanastasopoulos-kKzbyDeb62M-unsplash.jpg
 categories: 
     - "آموزش"
 tags:

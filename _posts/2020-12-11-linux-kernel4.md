@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-12-12 22:30:12 +0330
 jdate: 1399-10-22
 title: لینوکس را بیشتر بشناسیم (پارت4)VFS
 author: aminyousefnejad
-image: /uploads/linux_kernel/wallpaper.png
+image: /img/linux_kernel/wallpaper.png
 categories:
     - لینوکس
 tags:
@@ -23,7 +26,7 @@ tags:
 - network file systems (nfs , smbfs/cifs , ncp)
 - virtual file system(procfs , sysfs , sockfs pipefs)
 
-![vfs abstract layer](/uploads/linux_kernel/vfs_abstract_layer.gif)
+![vfs abstract layer](/img/linux_kernel/vfs_abstract_layer.gif)
 
 در واقع ایده پشت VFS این بوده که یه مدل برای فایل بسازن که بتونه فایل ها رو در فایل سیستم های مختلف نمایش بده . پس تنها کاری که فایل سیستم ها باید انجام بدن اینکه با vfs ارتباط بر قرار کنن . این مسئله باعث میشه که نوشتن فایل سیستم های جدید بسیار آسون بشه . برا همینه که لینوکس از کلی فایل سیستم پشتیبانی می کنه یه شرکت می تونه یک نوع جدید از فایل سیستم رو بنویسه و کافیه روی vfs سوار شه و حله و هیچ مشکلی نیست . 
 

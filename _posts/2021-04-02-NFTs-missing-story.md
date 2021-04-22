@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2021-04-02 12:05:01 +0330
 jdate: 1400-1-13
 title: NFT ها و جریان گم شدنشون! 

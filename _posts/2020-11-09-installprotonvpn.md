@@ -1,4 +1,7 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-09 22:43:30 +0330
 jdate: 1399-08-19
 title: چطور به اینترنت وصل شیم ؟

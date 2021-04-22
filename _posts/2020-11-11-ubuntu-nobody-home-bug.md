@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-11 19:50:01 +0330
 jdate: 1399-08-21
 title: آسیب پذیری جدید  Ubuntu 20.04
 author: aminyousefnejad
-image: /uploads/vulnerability.jpg
+image: /img/vulnerability.jpg
 categories:
     - لینوکس
 tags:

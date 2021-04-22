@@ -1,9 +1,12 @@
 ---
+layout: single
+type: post
+comments: true
 date: 2020-11-11 6:36:01 +0330
 jdate: 1399-08-21
 title: مالکیت و مجوز ها در لینوکس
 author: aminyousefnejad
-image: /uploads/access-denied.jpg
+image: /img/access-denied.jpg
 categories:
     - آموزش
     - لینوکس
@@ -51,7 +54,7 @@ srw-rw-rw-  1 root root    0 Nov 11 06:01 /run/systemd/journal/dev-log
 
  ۹ تا کاراکتر باقی مونده به ترتیب نشون دهنده پرمیشن های صاحب فایل ، اعضای گروه و دیگران هست . 
 
-<img src="/uploads/permissions.png ">
+<img src="/img/permissions.png ">
 
 ## تغییر مالکیت فایل
 
