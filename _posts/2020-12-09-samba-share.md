@@ -40,15 +40,15 @@ sudo ufw allow samba
 
 و برای فعال کردنش تو ویندوز مثل عکس زیر عمل می کنیم . و بعدش باید ریبوت کنید . 
 
-![enable samba](/uploads/smb/enabling_samba.png)
+![enable samba](/img/smb/enabling_samba.png)
 
 ## اشتراک گذاری فولدر تو ویندوز 
 
 خب اینکار راحته و به احتمال همتتون بلد هستید . ولی مراحل به صورت زیر هست و فولدر رو برای استفاده همه به اشتراک میزاریم . ( منطقی نیست تو شبکه های بزرگ اینکارو بکنید ولی تو شبکه خونگی که کسی به جز شما بهش وصل نمی شه گزینه خوبیه .)
 
-![networkaccess](/uploads/smb/sharing_folder.PNG)
+![networkaccess](/img/smb/sharing_folder.PNG)
 
-![add new](/uploads/smb/everyone_sharing.PNG)
+![add new](/img/smb/everyone_sharing.PNG)
 
 بهتره دسترسی روی فقط خواندن بزارید . رو دکمه share کلیک کنید . اوکیه . 
 
@@ -56,8 +56,8 @@ sudo ufw allow samba
 
 اگه میزکارتون گنوم یا kde هست به صورت دیفالت باید یه گزینه باشه که با راست کلیک روش می تونید فولدر مورد نظرتونو به اشتراک بزارید . مثل عکس زیر 
 
-![localshare](/uploads/smb/localnetworkshare_ubuntu.png)
-![foldershare](/uploads/smb/folder-sharing_ubuntu.png)
+![localshare](/img/smb/localnetworkshare_ubuntu.png)
+![foldershare](/img/smb/folder-sharing_ubuntu.png)
 
 
 
@@ -65,7 +65,7 @@ sudo ufw allow samba
 
 برای به اشتراک گذاری فایل منیجر دیفالت thunar رو باز کنید از منو بالا روی ‌edit و سپس روی Configure custom action کلیک کنید و علامت بعلاوه رو بزنید
 
-![share action](/uploads/smb/xfce-add-share-action.png)
+![share action](/img/smb/xfce-add-share-action.png)
 
 و تو قسمت command دستور زیر رو وارد کنید . اگه خواستید می تونید براش آیکون هم ست کنید . 
 
@@ -79,11 +79,11 @@ net usershare add %n %f “” Everyone:R guest_ok=y
 net usershare delete %n
 ```
 
-![unsahre](/uploads/smb/xfce-add-unshare-action.png)
+![unsahre](/img/smb/xfce-add-unshare-action.png)
 
 برای دیدن فولدرهای به اشتراک گذاشته شده لینوکسمون روی ویندوز کلیدای ترکیبی win + r رو فشار بدید و به صورت زیر آی پی سیستم لینوکسیتون رو بزنید 
 
-![open network](/uploads/smb/opening network.PNG)
+![open network](/img/smb/opening network.PNG)
 
 ویندوز explorer باز می شه و فولدر های به اشتراک گذاشته شده رو نشونتون میده چون فولدر ها برای گروه کاربران Everyone هست ازتون یوزرنیم و پسورد نمی خواد. 
 
@@ -99,7 +99,7 @@ nautilus smb://ip-address
 
 اگه از روی لینوکس میخوایید به فولدر های ویندوز دسترسی داشته باشید یه همچین پنجره ای میاد که فقط لازمه فیلد های یوزرنیم و پسورد رو با هر اطلاعاتی پر کنید و محتوای فولدر دسترسی پیدا کنید . ( چون تو قسمت قبلی برای everyone به اشتراک گذاشتیم تو ویندوز ) 
 
-![anyuser](/uploads/smb/any-user-windows.png)
+![anyuser](/img/smb/any-user-windows.png)
 
 اگه قسمت فراموش شده ای نباشه باید با همین مراحل کارتون را بیفته :) 
 

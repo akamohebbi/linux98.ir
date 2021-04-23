@@ -34,6 +34,77 @@
             </a>
         {% endfor %}
     </div>
+
+    <div class="w3-display-container">
+        <div class="w3-display-middle">
+            {% if page.title %}
+            <h1>{{ page.title }}</h1>
+                {% if page.type == "post" %}
+                    {% if page.jdate %}
+                        {% assign jdate = page.jdate | split: "-" %}
+                        {% assign y = jdate[0] | minus: 0 %}
+                        {% assign m = jdate[1] | minus: 1 %}
+                        {% assign d = jdate[2] | minus: 0 %}
+                        {% assign w = page.date | date: "%w" | minus: 0 %}
+                    {% endif %}
+                    {% if page.jedit %}
+                        {% assign jedit = page.jedit | split: "-" %}
+                        {% assign ye = jedit[0] | minus: 0 %}
+                        {% assign me = jedit[1] | minus: 1 %}
+                        {% assign de = jedit[2] | minus: 0 %}
+                        {% assign we = page.edit | date: "%w" | minus: 0 %}
+                    {% endif %}
+
+                    {% assign time_to_read = page.content | number_of_words | divided_by: 200.0 | round: 2 %}
+                    {% assign t = page.content | number_of_words | divided_by: 200 %}
+                    {% assign t = time_to_read | minus: t | times: 0.60 | times: 100 | round %}
+                    {% if t > 30 %}
+                        {% assign time_to_read = time_to_read | plus: 1 %}
+                    {% endif %}
+
+                    <p class="article-meta">
+                        {% if page.date or page.jdate %}
+                            <span class="article-date-header meta">
+                                <i class="fas fa-calendar"></i>
+                                <time pubdate datetime="{{ page.date | date_to_xmlschema }}">{% if page.jdate %}{{ site.data.strings.weekdays[w] }}، {{ d }} {{ site.data.strings.months[m] }} {{ y }}{% else %}{{ page.date | date: "%A %d %m %y" }}{% endif %}</time>
+                            </span>
+                        {% endif %}
+
+                        {% if page.author %}
+                            <span class="article-author-header meta">
+                                <i class="fas fa-user"></i>
+                                {{ site.data.authors[page.author].name }}
+                            </span>
+                        {% endif %}
+
+                        {% if page.categories %}
+                            <span class="article-categories-header meta">
+                                <i class="fas fa-archive"></i>
+                                {% for category in page.categories %}
+                                    <span>{{ category }}</span>
+                                {% endfor %}
+                            </span>
+                        {% endif %}
+
+                        {% if page.comments == true %}
+                            <span class="article-comments-header meta">
+                                <i class="fas fa-comment"></i>
+                                <a href="{{ page.url }}#disqus_thread">کامنت ها</a>
+                            </span>
+                        {% endif %}
+
+                        <span class="article-time-to-read-header meta">
+                            <i class="fas fa-clock"></i>
+                            {{ time_to_read | round }} دقیقه
+                        </span>
+                    </p>
+                {% endif %}
+                
+            {% else %}
+                <h2>{{ site.description }}</h2>
+            {% endif %}
+        </div>
+    </div>
 </header>
 
 
