@@ -46,17 +46,18 @@ html {
 body {
     background-color: #f9f9f9;
     color: #333333;
-    font-family: $estedad_font_family;
-    font-size: 1.1em;
+    // font-family: $estedad_font_family;
+    font-size: 1em;
 }
 
+body,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: $lalezar_font_family;
+    font-family: 'Vazir', sans-serif;
 }
 
 img {
@@ -193,7 +194,7 @@ a {
 }
 
 .page-content {
-    padding-left: 32px;
+    padding-left: 64px;
 }
 
 .page-article {
@@ -373,7 +374,7 @@ a {
 
         figcaption {
             padding: 4px 0 0 0;
-            font-size: $x_small_font_size;
+            // font-size: $x_small_font_size;
             font-style: italic;
             text-align: center;
             color: $text_color_secondary;
@@ -572,7 +573,7 @@ a {
     }
 
     .author-name {
-        font-size: $xxx_large_font_size;
+        // font-size: $xxx_large_font_size;
         line-height: 1.2;
         margin: 0;
 
@@ -582,7 +583,7 @@ a {
     }
 
     .author-bio {
-        font-size: $small_font_size;
+        // font-size: $small_font_size;
         margin: 8px 0 0 0;
     }
 
@@ -621,11 +622,11 @@ a {
 
     time {
         color: $text_color_secondary;
-        font-size: $x_small_font_size;
+        // font-size: $x_small_font_size;
     }
 
     h2 {
-        font-size: $xx_large_font_size;
+        // font-size: $xx_large_font_size;
         margin-top: 0;
 
         a {
@@ -639,7 +640,7 @@ a {
     }
 
     div {
-        font-size: $small_font_size;
+        // font-size: $small_font_size;
         margin-bottom: 8px;
     }
 
@@ -761,7 +762,7 @@ a {
 }
 
 .page-sidebar {
-    font-size: $small_font_size;
+    // font-size: $small_font_size;
 }
 
 @media (max-width: 600px) {

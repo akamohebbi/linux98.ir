@@ -1,0 +1,24 @@
+telegram_links:
+    -
+        background: "#0088cc"
+        url: "https://t.me/linux98ir"
+        icon: "fas fa-users"
+        title: "گروه تلگرام"
+    -
+        background: "#0088cc"
+        url: "https://t.me/linux98dotir"
+        icon: "fab fa-telegram-plane"
+        title: "کانال تلگرام"
+
+
+video_casts:
+    -
+        background: "#ff0000"
+        url: "https://www.youtube.com/channel/UCU_SZ-kFvJCdUdIeYh-3cGA"
+        icon: "fab fa-youtube"
+        title: "کانال یوتیوب"
+    -
+        background: "#ea1d5d"
+        url: "https://www.aparat.com/linux98"
+        icon: "fas fa-video"
+        title: کانال آپارات

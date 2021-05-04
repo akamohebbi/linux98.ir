@@ -1,11 +1,13 @@
-<div class="page-widget widget-menu">
-    <header class="widget-header">
-        <h3>{{ include.title }}</h3>
-    </header>
+<div class="page-widget widget-menu menu-{{ include.type | default: 'list' }}">
+    {% if include.title %}
+        <header class="widget-header">
+            <h3 class="widget-title">{{ include.title }}</h3>
+        </header>
+    {% endif %}
     <div class="widget-body">
         <ul>
-            {% for i in site.data.navigations[include.menu] %}
-                <li><a href="{{ i.url }}">{{ i.title }}</a></li>
+            {% for item in site.data.menus[include.menu] %}
+                <li><a href="{{ item.url }}" target="{{ item.target | default: '_blank' }}" style="background: {{ item.background }}">{% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}<span>{{ item.title }}</span></a></li>
             {% endfor %}
         </ul>
     </div>

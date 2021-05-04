@@ -1,40 +1,56 @@
 <aside class="w3-col s12 m3 l3 page-sidebar w3-left">
     
+{% if page.url != "/search/" %}
     {% 
-        include widgets/search.html 
+        include widgets/search.html
+        title="جستجو"
     %}
-    
-    {% 
-        include widgets/banner.html 
-        title="لینوکس ۹۸ در تلگرام"
-        collection="telegram"
-    %}
+{% endif %}
 
-    {%
-        include widgets/categories.html
-        title="دسته بندی ها"    
-    %}
-    
-    {% 
-        include widgets/banner.html
-        title="ویدیوکست های لینوکس ۹۸"
-        collection="social"
-    %}
-    
-    {% 
-        include widgets/posts.html 
-        title="نوشته های تصادفی"
-        count=10
-    %}
 
-    {%
-        include widgets/feedburner.html
-        title="خبرنامه"    
-    %}
 
-    {%
-        include widgets/tags.html
-        title="تگ ها"    
-    %}
+{%
+    include widgets/menu.html
+    title="لینوکس ۹۸ در تلگرام"
+    type="banner"
+    menu="telegram_links"
+%}
+
+
+
+{%
+    include widgets/categories.html
+    title="دسته بندی ها"    
+%}
+
+
+
+{%
+    include widgets/menu.html
+    title="ویدیوکست های لینوکس ۹۸"
+    type="banner"
+    menu="video_casts"
+%}
+
+
+
+{% 
+    include widgets/posts.html 
+    title="نوشته های تصادفی"
+%}
+
+
+
+{%
+    include widgets/feedburner.html
+    title="خبرنامه"    
+%}
+
+
+
+{%
+    include widgets/tags.html
+    title="تگ ها"    
+%}
 
 </aside>

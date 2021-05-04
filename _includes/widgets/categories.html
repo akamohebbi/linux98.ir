@@ -1,13 +1,15 @@
 <div class="page-widget widget-categories">
-    <header class="widget-header">
-        <h3>{{ include.title }}</h3>
-    </header>
+    {% if include.title %}
+        <div class="widget-header">
+            <h3 class="widget-title">{{ include.title }}</h3>
+        </div>
+    {% endif %}
     <div class="widget-body">
         <ul>
             {% for c in site.categories %}
                 <li>
                     <a href="{{ '/sitemap/' | relative_url }}#{{ c[0] }}">{{ c[0] }}</a>
-                    <span>({{ c[1].size }})</span>
+                    <span class="w3-left">{{ c[1].size }}</span>
                 </li>
             {% endfor %}
         </ul>

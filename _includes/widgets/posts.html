@@ -1,19 +1,63 @@
-<!--
+{% comment %}
     title
+        string
+        optional
     mode
-        random
-        latest
+        string ('random', 'latest')
+        default: 'random'
+        optional
     count
--->
+        int
+        defaul: 5
+        optional
+    show_post_date
+        boolean (true, false)
+        default: true
+        optional
+{% endcomment %}
+
+{% assign mode = include.mode | default: 'random' %}
+{% assign count = include.count | default: 5 %}
+{% assign show_post_date = include.show_post_date | default: 'true' %}
+
+{% assign posts = site.posts | limit: count %}
+{% if mode == 'random' %}
+    {% assign posts = site.posts | sample: count %}
+{% endif %}
+
 <div class="page-widget widget-posts">
-    <header class="widget-header">
-        <h3>{{ include.title }}</h3>
-    </header>
+    {% if include.title %}
+        <div class="widget-header">
+            <h3 class="widget-title">{{ include.title }}</h3>
+        </div>
+    {% endif %}
     <div class="widget-body">
-        {% assign posts = site.posts | sample: include.count %}
         <ul>
-            {% for i in posts %}
-                <li><a href="{{ i.url | relative_url }}">{{ i.title }}</a></li>
+            {% for post in posts %}
+
+                {% if post.jdate %}
+                    {% assign jdate = post.jdate | split: "-" %}
+                    {% assign y = jdate[0] | minus: 0 %}
+                    {% assign m = jdate[1] | minus: 1 %}
+                    {% assign d = jdate[2] | minus: 0 %}
+                    {% assign w = post.date | date: "%w" | minus: 0 %}
+                {% endif %}
+                {% if post.jedit %}
+                    {% assign jedit = post.jedit | split: "-" %}
+                    {% assign ye = jedit[0] | minus: 0 %}
+                    {% assign me = jedit[1] | minus: 1 %}
+                    {% assign de = jedit[2] | minus: 0 %}
+                    {% assign we = post.edit | date: "%w" | minus: 0 %}
+                {% endif %}
+
+                <li>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    {% if show_post_date == 'true' %}
+                        {% if post.date or post.jdate %}
+                            <span><time pubdate datetime="{{ post.date | date_to_xmlschema }}">{% if post.jdate %}{{ site.data.strings.weekdays[w] }}، {{ d }} {{ site.data.strings.months[m] }} {{ y }}{% else %}{{ post.date | date: "%A %d %m %y" }}{% endif %}</time></span>
+                        {% endif %}
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     </div>

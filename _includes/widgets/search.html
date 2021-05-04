@@ -1,7 +1,9 @@
 <div class="page-widget widget-search">
-    <header class="widget-header">
-        <h3 class="widget-title">{{ site.data.strings.widget.search.title }}</h3>
-    </header>
+    {% if include.title %}
+        <div class="widget-header">
+            <h3 class="widget-title">{{ include.title }}</h3>
+        </div>
+    {% endif %}
     <div class="widget-body">
         <!-- <p>{{ site.data.strings.widget.search.description }}</p> -->
         <form action="{{ '/search/' | relative_url }}" method="GET">
