@@ -6,7 +6,7 @@
         color: $theme_color;
         
         &:hover {
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
     }
     
@@ -22,7 +22,7 @@
         border: 1px solid #eeeeee;
 
         &:focus {
-            border: 1px solid $text_color_primary;
+            border: 1px solid $primary_text_color;
         }
     }
 }

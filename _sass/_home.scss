@@ -47,7 +47,7 @@ body {
     background-color: #f9f9f9;
     color: #333333;
     // font-family: $estedad_font_family;
-    font-size: 1em;
+    font-size: $normal_font_size;
 }
 
 body,
@@ -145,6 +145,7 @@ a {
 }
 
 .site-title {
+    color: $theme_color;
     &:hover {
         color: #ffffff !important;
     }
@@ -159,7 +160,7 @@ a {
 
 .page-header-nav-desktop {
     a {
-        color: $text_color_secondary;
+        color: $secondary_text_color;
 
         &:hover {
             color: #ffffff !important;
@@ -176,7 +177,17 @@ a {
     border-radius: 8px;
     box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.32);
     z-index: 2;
-    position: relative
+    position: relative;
+
+    a {
+        &:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+        
+        &:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+    }
 }
 
 .page-ef-wrapper {
@@ -186,7 +197,7 @@ a {
     margin-top: -128px;
     margin-bottom: 8.33333%;
     border-radius: 8px;
-    box-shadow: 2px 2px 4px rgba($color: #333333, $alpha: 0.08);
+    box-shadow: 4px 4px 8px rgba($color: #333333, $alpha: 0.08);
 }
 
 .page-entry {
@@ -229,7 +240,7 @@ a {
         }
     
         &.disable {
-            color: $text_color_secondary;
+            color: $secondary_text_color;
 
             &:hover {
                 border-color: #eeeeee;
@@ -253,12 +264,12 @@ a {
     a {
         text-decoration: none;
         &:hover {
-            color: $text_color_primary;
+            color: $primary_text_color;
         }
     }
 
     .meta {
-        color: $text_color_secondary;
+        color: $secondary_text_color;
 
         &::after {
             margin-left: 16px;
@@ -322,7 +333,7 @@ a {
 }
 
 .article-content {
-    font-size: 1.15rem;
+    font-size: $page_content_font_size;
     line-height: 1.7;
 
     p {
@@ -377,7 +388,7 @@ a {
             // font-size: $x_small_font_size;
             font-style: italic;
             text-align: center;
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
     }
 
@@ -386,7 +397,7 @@ a {
 
         &:hover {
             text-decoration: none;
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
     }
 
@@ -395,7 +406,7 @@ a {
         border-right: 4px solid $theme_color;
         padding: 8px 16px 8px 0;
         font-size: 128%;
-        color: $text_color_secondary;
+        color: $secondary_text_color;
 
         p {
             margin: 0;
@@ -436,7 +447,7 @@ a {
         margin-left: 4px;
 
         &:hover {
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
 
         &::before {
@@ -515,7 +526,7 @@ a {
     color: $theme_color;
 
     &:hover {
-        color: $text_color_secondary;
+        color: $secondary_text_color;
     }
 }
 
@@ -603,7 +614,7 @@ a {
             }
 
             &:hover {
-                color: $text_color_secondary;
+                color: $secondary_text_color;
             }
         }
     }  
@@ -621,7 +632,7 @@ a {
     padding-top: 64px;
 
     time {
-        color: $text_color_secondary;
+        color: $secondary_text_color;
         // font-size: $x_small_font_size;
     }
 
@@ -648,14 +659,14 @@ a {
         text-decoration: none;
         color: $theme_color;
         &:hover {
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
     }
 }
 
 .page-footer {
     padding: 64px;
-
+    border-radius: 0 0 8px 8px;
     background-color: #333333;
     color: #ffffff;
 }
@@ -713,7 +724,7 @@ a {
         font-size: 1.15rem;
 
         &:hover {
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
     }
 }
@@ -737,7 +748,7 @@ a {
         font-size: 1.15rem;
 
         &:hover {
-            color: $text_color_secondary;
+            color: $secondary_text_color;
         }
     }
 
@@ -770,6 +781,7 @@ a {
         margin-bottom: 0;
         box-shadow: none;
         border: none;
+        border-radius: 0;
     }
 
     .page-header .w3-display-container {
@@ -820,6 +832,7 @@ a {
     .page-footer {
         padding: 16 16px 16px 16px;
         margin-top: 64px;
+        border-radius: 0;
     }
     
     .page-footer-nav,
