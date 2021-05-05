@@ -35,19 +35,21 @@
         <ul>
             {% for post in posts %}
 
-                {% if post.jdate %}
-                    {% assign jdate = post.jdate | split: "-" %}
-                    {% assign y = jdate[0] | minus: 0 %}
-                    {% assign m = jdate[1] | minus: 1 %}
-                    {% assign d = jdate[2] | minus: 0 %}
-                    {% assign w = post.date | date: "%w" | minus: 0 %}
-                {% endif %}
-                {% if post.jedit %}
-                    {% assign jedit = post.jedit | split: "-" %}
-                    {% assign ye = jedit[0] | minus: 0 %}
-                    {% assign me = jedit[1] | minus: 1 %}
-                    {% assign de = jedit[2] | minus: 0 %}
-                    {% assign we = post.edit | date: "%w" | minus: 0 %}
+                {% if show_post_date == 'true' %}
+                    {% if post.jdate %}
+                        {% assign jdate = post.jdate | split: "-" %}
+                        {% assign y = jdate[0] | minus: 0 %}
+                        {% assign m = jdate[1] | minus: 1 %}
+                        {% assign d = jdate[2] | minus: 0 %}
+                        {% assign w = post.date | date: "%w" | minus: 0 %}
+                    {% endif %}
+                    {% if post.jedit %}
+                        {% assign jedit = post.jedit | split: "-" %}
+                        {% assign ye = jedit[0] | minus: 0 %}
+                        {% assign me = jedit[1] | minus: 1 %}
+                        {% assign de = jedit[2] | minus: 0 %}
+                        {% assign we = post.edit | date: "%w" | minus: 0 %}
+                    {% endif %}
                 {% endif %}
 
                 <li>
