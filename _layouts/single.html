@@ -87,12 +87,12 @@ layout: base
 </article>
 
 
-<div class="article-share-buttons w3-row">
+{% comment %} <div class="article-share-buttons w3-row">
     <button id="article_share_button_twitter" class="w3-col s3 m3 l3 article-share-button w3-button"><i class="fab fa-twitter"></i></button>
     <button id="article_share_button_facebook" class="w3-col s3 m3 l3 article-share-button w3-button"><i class="fab fa-facebook"></i></button>
     <button id="article_share_button_telegram" class="w3-col s3 m3 l3 article-share-button w3-button"><i class="fab fa-telegram"></i></button>
     <button id="article_share_button_whatsapp" class="w3-col s3 m3 l3 article-share-button w3-button"><i class="fab fa-whatsapp"></i></button>
-</div>
+</div> {% endcomment %}
 
 
 {% if page.type == "post" and site.data.authors[page.author] and site.data.authors[page.author].show_author_box != false %}
